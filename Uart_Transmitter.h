@@ -29,22 +29,14 @@
 typedef enum {
     Zbs_UartError       	      =	  0x00,
     Zbs_NwkInfo                 =	  0x01,
-    Zbs_LeaveNwkInfo            =   0x04,
+    
     Zbs_PjoinStatus	            =	  0x05,
-    Zbs_DeviceJoinNwk           =   0x06,
-    Zbs_DeviceMac           	  =	  0x07,
-    Zbs_ActiveEndpoint          = 	0x08,
-    Zbs_SimpleDescription       =   0x09,
-    Zbs_NodeDescription         =   0x0A,
-    Zbs_DeviceAttributeInfo		  =	  0x0B,
+    Zbs_ZclClusterCmdResponse   =   0x06,
+    Zbs_ZclGlobalCmdResponse    =   0x07,
+    Zbs_ZdoCmdResponse          =   0x08,
     Zbs_DeviceMCVersion	        =	  0x0F,
-    Zbs_BindUnbindDevice        =   0x10,
-}Zbs_CommandID_enum;
 
-typedef enum{
-    eBindCmd    = 0,
-    eUnbindCmd  = 1,
-}BindUnbindCmd_enum;
+}Zbs_CommandID_enum;
 
 //----------0x00-ZigbeeErrorCode----------//
 typedef enum {
@@ -88,14 +80,6 @@ typedef struct{
     int8u TimeOut;
 }Zbs_NwkInfoDataStr;
 
-typedef struct{
-    int8u Length;
-    int8u TxSeqNumber;
-    int8u CmdId;
-    int8u NwkAddr[2];
-    int8u CheckXor;
-    int8u TimeOut;
-}Zbs_LeaveNwkInfoDataStr;
 
 typedef struct{
     int8u Length;
@@ -106,64 +90,6 @@ typedef struct{
     int8u TimeOut;
 }Zbs_PjoinStatusDataStr;
 
-typedef struct{
-    int8u Length;
-    int8u TxSeqNumber;
-    int8u CmdId;
-    int8u NwkAddr[2];
-    int8u Mac[8];
-    int8u CapInfo;
-    int8u CheckXor;
-    int8u TimeOut;    
-
-}Zbs_DeviceJoinNwkDataStr;
-
-typedef struct{
-    int8u Length;
-    int8u TxSeqNumber;
-    int8u CmdId;
-    int8u NwkAddr[2];
-    int8u Mac[8];
-    int8u CheckXor;
-    int8u TimeOut;
-}Zbs_DeviceMacDataStr;
-
-typedef struct{
-    int8u Length;
-    int8u TxSeqNumber;
-    int8u CmdId;
-    int8u NwkAddr[2];
-    int8u ActiveEndpointCount;
-    int8u* EndpointList;
-    int8u CheckXor;
-    int8u TimeOut;
-}Zbs_ActiveEndpointDataStr;
-
-typedef struct{
-    int8u Length;
-    int8u TxSeqNumber;
-    int8u CmdId;
-    int8u NwkAddr[2];
-    int8u Endpoint;
-    int8u ProfileId[2];
-    int8u DeviceId[2];
-    int8u InputClusterCount;
-    int8u* InputClusterList;
-    int8u OutputClusterCount;
-    int8u* OutputClusterList;
-    int8u CheckXor;
-    int8u TimeOut;
-}Zbs_SimpleDescriptionDataStr;
-
-typedef struct{
-    int8u Length;
-    int8u TxSeqNumber;
-    int8u CmdId;
-    int8u NwkAddr[2];
-    int8u NodeDescription[13];
-    int8u CheckXor;
-    int8u TimeOut;
-}Zbs_NodeDescriptionDataStr;
 
 typedef struct{
     int8u Length;
@@ -172,45 +98,39 @@ typedef struct{
     int8u NwkAddr[2];
     int8u Endpoint;
     int8u ClusterId[2];
-    int8u AttributeId[2];
-    int8u DataType;
-    int8u ValueLength;
-    int8u* Value;
+    int8u CmdPayloadLength;
+    int8u* CmdPayload;
     int8u CheckXor;
     int8u TimeOut;
-}Zbs_DeviceAttributeInfoDataStr;
+}Zbs_ZclClusterCmdResponseStr;
 
 typedef struct{
     int8u Length;
     int8u TxSeqNumber;
     int8u CmdId;
     int8u NwkAddr[2];
-    int8u CodeType;
-    int8u CodeVersion[2];
+    int8u Endpoint;
+    int8u ClusterId[2];
+    int8u GeneralCmd;
+    int8u CmdPayloadLength;
+    int8u* CmdPayload;
     int8u CheckXor;
     int8u TimeOut;
-}Zbs_DeviceMCVersionDataStr;
-    
+}Zbs_ZclGlobalCmdResponseStr;
+
+
 typedef struct{
     int8u Length;
     int8u TxSeqNumber;
     int8u CmdId;
-    int8u BindUnbindCmd;
-    int8u NwkAddr1[2];
-    int8u NwkAddr2[2];
-    int8u Endpoint1;
-    int8u Endpoint2;
-    int8u ClusterId[2];
-    int8u Status;
+    int8u NwkAddr[2];
+    int8u ZdoCmd[2];
+    int8u CmdPayloadLength;
+    int8u* CmdPayload;
     int8u CheckXor;
     int8u TimeOut;
-}Zbs_BindUnbindDeviceDataStr;
+}Zbs_ZdoCmdResponseStr;
 
-
-typedef struct{
-    int8u EndpointNumber;
-    int16u DeviceIdOfEndpoint;
-}Zbs_EndpointInfo_str;
 
 //---------------------Define------------------//
 #define NORMAL_TIMEOUT	30				      //30ms
@@ -250,26 +170,6 @@ int16u GetLastTxUartCmd(void);
  */
 void UartSendCommand(void);
 /**
- * @func   testSendUartCmd
- *
- * @brief  None  
- *
- * @param  None
- *
- * @retval None
- */
-void testSendUartCmd(void);
-/**
- * @func   testPoint
- *
- * @brief  None  
- *
- * @param  None
- *
- * @retval None
- */
-void testPoint(void);
-/**
  * @func   UartSendUartError
  *
  * @brief  None  
@@ -289,16 +189,7 @@ void UartSendUartError(int8u ErrorCode, int8u seqNumber);
  * @retval None
  */
 void UartSendNwkInfo(int8u ExtendedPanId[8], int16u PanId, int8u Channel);
-/**
- * @func   UartSendLeaveNwkInfo
- *
- * @brief  None  
- *
- * @param  None
- *
- * @retval None
- */
-void UartSendLeaveNwkInfo(int16u NwkAddr);
+
 /**
  * @func   UartSendPjoinStatus
  *
@@ -309,110 +200,52 @@ void UartSendLeaveNwkInfo(int16u NwkAddr);
  * @retval None
  */
 void UartSendPjoinStatus(int8u State);
-/**
- * @func   UartSendDeviceJoinNwk
- *
- * @brief  None  
- *
- * @param  None
- *
- * @retval None
- */
-void UartSendDeviceJoinNwk(int16u NwkAddr, EmberEUI64 Mac,int8u CapInfo);
-/**
- * @func   UartSendDeviceMAC
- *
- * @brief  None  
- *
- * @param  None
- *
- * @retval None
- */
-void UartSendDeviceMAC(int16u NwkAddr, EmberEUI64 Mac);
-/**
- * @func   UartSendActiveEndpoint
- *
- * @brief  None  
- *
- * @param  None
- *
- * @retval None
- */
-void UartSendActiveEndpoint(int16u NwkAddr,
-                                  int8u ActiveEndpointCount,
-                                  int8u* EndpointList);
-/**
- * @func   UartSendSimpleDescription
- *
- * @brief  None  
- *
- * @param  None
- *
- * @retval None
- */
-void UartSendSimpleDescription(int16u NwkAddr,
-                               int8u Endpoint,
-                               int16u ProfileId,
-                               int16u DeviceId,
-                               int8u InputClusterCount,
-                               int8u* InputClusterList,
-                               int8u OutputClusterCount,
-                               int8u* OutputClusterList);
-/**
- * @func   UartSendNodeDescription
- *
- * @brief  None  
- *
- * @param  None
- *
- * @retval None
- */
-void UartSendNodeDescription(int16u NwkAddr,
-                                  int8u NodeDescription[13]);
-/**
- * @func   UartSendDeviceAttributeInfo
- *
- * @brief  None  
- *
- * @param  None
- *
- * @retval None
- */
-void UartSendDeviceAttributeInfo(int16u NwkAddr,
-                                  int8u Endpoint,
-                                  int16u ClusterId,
-                                  int16u AttributeId,
-                                  int8u DataType,
-                                  int8u ValueLength,
-                                  int8u * Value);
-/**
- * @func   UartSendBindUnbindDevice
- *
- * @brief  None  
- *
- * @param  None
- *
- * @retval None
- */
-void UartSendBindUnbindDevice(int8u BindUnbindCmd,
-                        int16u NwkAddr1,
-                        int16u NwkAddr2,
-                        int8u Endpoint1,
-                        int8u Endpoint2,
-                        int16u ClusterId,
-                        int8u Status);
-/**
- * @func   convertClustesIdsToTxBuff
- *
- * @brief  None  
- *
- * @param  None
- *
- * @retval None
- */
-void convertClustesIdsToTxBuff(int8u* ClusterIds, int8u* Ret, int8u NumberOfClusterIds);
 
 
+/**
+ * @func   UartSendZdoCmdResponse
+ *
+ * @brief  None  
+ *
+ * @param  None
+ *
+ * @retval None
+ */
+void UartSendZdoCmdResponse(int16u NwkAddr,
+                            int16u ZdoCmd,
+                            int8u CmdPayloadLength,
+                            int8u *CmdPayload);
+
+/**
+ * @func   UartSendZclGlobalCmdResponse
+ *
+ * @brief  
+ *
+ * @param  None
+ *
+ * @retval None
+ */
+void UartSendZclGlobalCmdResponse(int16u NwkAddr,
+                                   int8u Endpoint,
+                                   int16u ClusterId,
+                                   int8u GeneralCmd,
+                                   int8u CmdPayloadLength,
+                                   int8u *CmdPayload);
+
+/**
+ * @func   UartSendZclClusterCmdResponse
+ *
+ * @brief  
+ *
+ * @param  None
+ *
+ * @retval None
+ */
+void UartSendZclClusterCmdResponse(int16u NwkAddr,
+                                   int8u Endpoint,
+                                   int16u ClusterId,
+                                   int8u CmdPayloadLength,
+                                   int8u *CmdPayload);
 
 #endif
 

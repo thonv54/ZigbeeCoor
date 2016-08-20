@@ -142,10 +142,6 @@ PGM EmberAfGenericClusterFunction emberAfFuncArraySimpleMeteringClusterClient[] 
   extern void UartGetEventFunction(void); \
   extern EmberEventControl NwkFormEventControl; \
   extern void NwkFormEventFunction(void); \
-  extern EmberEventControl BindDeviceEventControl; \
-  extern void BindDeviceEventFunction(void); \
-  extern EmberEventControl UnbindDeviceEventControl; \
-  extern void UnbindDeviceEventFunction(void); \
   static void clusterTickWrapper(EmberEventControl *control, EmberAfTickFunction callback, uint8_t endpoint) \
   { \
     emberAfPushEndpointNetworkIndex(endpoint); \
@@ -168,8 +164,6 @@ PGM EmberAfGenericClusterFunction emberAfFuncArraySimpleMeteringClusterClient[] 
   { &UartSendEventControl, UartSendEventFunction }, \
   { &UartGetEventControl, UartGetEventFunction }, \
   { &NwkFormEventControl, NwkFormEventFunction }, \
-  { &BindDeviceEventControl, BindDeviceEventFunction }, \
-  { &UnbindDeviceEventControl, UnbindDeviceEventFunction }, \
 
 
 #define EMBER_AF_GENERATED_EVENT_STRINGS   \

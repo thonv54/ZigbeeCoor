@@ -32,18 +32,13 @@ int8u HC_UartConectionError_Task(int8u *data);
 int8u HC_FormNetwork_Task(int8u *data);
 int8u HC_GetNetworkInfo_Task(void);
 int8u HC_NetworkPjoin_Task(int8u *data);
-int8u HC_LeaveNetwork_Task(int8u *data);
 int8u HC_PjoinStatus_Task(void);
-int8u HC_GetMacAddr_Task(int8u *data);
-int8u HC_GetActiveEndpoint_Task(int8u *data);
-int8u HC_GetSimpleDesCription_Task(int8u *data);
-int8u HC_GetNodeDescription_Task(int8u *data);
-int8u HC_GetDeviceAttributeInfo_Task(int8u *data);
-int8u HC_DeviceControl_Task(int8u *data);
-int8u HC_WriteDeviceAtribute_Task(int8u *data);
+int8u HC_ZclClusterCmdRequest_Task(int8u *data);
+int8u HC_ZclGlobalCmdRequest_Task(int8u *data);
+int8u HC_ZdoCmdRequest_Task(int8u *data);
 int8u HC_ResetDevice_Task(int8u *data);
 int8u HC_GetDeviceMCVersion_Task(int8u *data);
-int8u HC_BindUnbindDevice_Task(int8u *data);
+
 
 #endif
 

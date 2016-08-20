@@ -1402,9 +1402,7 @@ bool emberAfPreZDOMessageReceivedCallback(EmberNodeId emberNodeId,
  * Ver.: always
  * @param bufLen The length in bytes of the list.  Ver.: always
  */
-bool emberAfReadAttributesResponseCallback(EmberNodeId emberNodeId,
-                                           uint8_t sourceEndpoint,
-                                           EmberAfClusterId clusterId,
+bool emberAfReadAttributesResponseCallback(EmberAfClusterId clusterId,
                                            uint8_t *buffer,
                                            uint16_t bufLen);
 /** @brief Read Reporting Configuration Command

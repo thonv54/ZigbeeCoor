@@ -30,6 +30,7 @@ u8_t UartRxPacketCheckXor = 0;
 u8_t UartRxCommandData[64] = { 0 };
 u8_t UartRxCurrentLength = 0;
 
+
 void UartProcess(u8_t *UartPacketCommand) {
     u8_t seqNumber = UartPacketCommand[0];
     u8_t UartPacketID = UartPacketCommand[1];
@@ -48,41 +49,23 @@ void UartProcess(u8_t *UartPacketCommand) {
     case HC_NetworkPjoin:
         ErrorCode = HC_NetworkPjoin_Task(UartPacketCommand);
         break;
-    case HC_LeaveNetwork:
-        ErrorCode = HC_LeaveNetwork_Task(UartPacketCommand);
-        break;
     case HC_PjoinStatus:
         ErrorCode = HC_PjoinStatus_Task();
         break;
-    case HC_GetMacAddr:
-        ErrorCode = HC_GetMacAddr_Task(UartPacketCommand);
+    case HC_ZclClusterCmdRequest:
+        ErrorCode = HC_ZclClusterCmdRequest_Task(UartPacketCommand);
         break;
-    case HC_GetActiveEndpoint:
-        ErrorCode = HC_GetActiveEndpoint_Task(UartPacketCommand);
+    case HC_ZclGlobalCmdRequest:
+        ErrorCode = HC_ZclGlobalCmdRequest_Task(UartPacketCommand);
         break;
-    case HC_GetSimpleDesCription:
-        ErrorCode = HC_GetSimpleDesCription_Task(UartPacketCommand);
-        break;
-    case HC_GetNodeDescription:
-        ErrorCode = HC_GetNodeDescription_Task(UartPacketCommand);
-        break;
-    case HC_GetDeviceAttributeInfo:
-        ErrorCode = HC_GetDeviceAttributeInfo_Task(UartPacketCommand);
-        break;
-    case HC_DeviceControl:
-        ErrorCode = HC_DeviceControl_Task(UartPacketCommand);
-        break;
-    case HC_WriteDeviceAtribute:
-        ErrorCode = HC_WriteDeviceAtribute_Task(UartPacketCommand);
+    case HC_ZdoCmdRequest:
+        ErrorCode = HC_ZdoCmdRequest_Task(UartPacketCommand);
         break;
     case HC_ResetDevice:
         ErrorCode = HC_ResetDevice_Task(UartPacketCommand);
         break;
     case HC_GetDeviceMCVersion:
         ErrorCode = HC_GetDeviceMCVersion_Task(UartPacketCommand);
-        break;
-    case HC_BindUnbindDevice:
-        ErrorCode = HC_BindUnbindDevice_Task(UartPacketCommand);
         break;
     default:
         ErrorCode = CmdIdNotAvaiable;
