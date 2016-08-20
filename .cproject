@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?>
+
+<cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="com.silabs.ide.si32.iar.debug#com.silabs.ide.si32.iar:7.50.2.10312">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.silabs.ide.si32.iar.debug#com.silabs.ide.si32.iar:7.50.2.10312" moduleId="org.eclipse.cdt.core.settings" name="IAR ARM - Debug">
+				<macros>
+					<stringMacro name="StudioToolchainPath" type="VALUE_PATH_DIR" value="${StudioToolchainPathFromID:com.silabs.ide.si32.iar:7.50.2.10312}"/>
+					<stringMacro name="StudioSdkPath" type="VALUE_PATH_DIR" value="${StudioSdkPathFromID:com.silabs.ember.sdk.external.znet:5.7.2.-1733634126}"/>
+				</macros>
+				<externalSettings/>
+				<extensions>
+					<extension id="com.silabs.ide.debug.core.S37" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="com.silabs.ide.debug.core.BIN" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="com.silabs.ide.debug.core.HEX" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.iar.cdt.errorParser.com.iar.cdt.errorParser.ErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule buildConfig.stockConfigId="com.silabs.ide.si32.iar.debug#com.silabs.ide.si32.iar:7.50.2.10312" cppBuildConfig.builtinIncludes="studio:/sdk/stack/ studio:/sdk/hal/ studio:/sdk/ studio:/sdk/hal/micro/cortexm3/efm32/ studio:/sdk/hal/micro/cortexm3/efm32/efr32/ studio:/sdk/submodules/CMSIS/Include/ studio:/sdk/submodules/emlib/inc/ studio:/sdk/submodules/emdrv/common/inc/ studio:/sdk/submodules/emdrv/sleep/inc/ studio:/sdk/submodules/emdrv/aesdrv/inc/ studio:/sdk/submodules/emdrv/aesdrv/src/ studio:/sdk/submodules/emdrv/trace/inc/ studio:/sdk/submodules/emdrv/gpiointerrupt/inc/ studio:/sdk/submodules/emdrv/ecode/ studio:/sdk/hal/micro/cortexm3/efm32/config/ studio:/sdk/submodules/emdrv/uartdrv/inc/ studio:/sdk/submodules/emdrv/spidrv/inc/ studio:/sdk/submodules/emdrv/dmadrv/inc/ studio:/sdk/submodules/emdrv/ustimer/inc/ studio:/sdk/submodules/emdrv/rtcdrv/inc/ studio:/sdk/submodules/kits/SLWSTK6100A_EFR32MG/config/ studio:/sdk/submodules/kits/common/bsp/ studio:/sdk/submodules/kits/common/drivers/ studio:/sdk/submodules/efrseq/rfprotocol/ieee802154/cortex/ studio:/sdk/submodules/efrseq/common/cortex/ studio:/sdk/submodules/s029_efr4fpga_drv/inc/ studio:/sdk/submodules/reptile/glib/ studio:/sdk/submodules/reptile/glib/glib/ studio:/sdk/submodules/reptile/glib/dmd/ studio:/sdk/submodules/emdrv/tempdrv/inc/ studio:/sdk/stack/ studio:/sdk/app/framework/include/ studio:/sdk/app/util/ studio:/sdk/hal/ studio:/sdk/ studio:/sdk/hal/micro/cortexm3/efm32/ studio:/sdk/hal/micro/cortexm3/efm32/efr32/ studio:/sdk/submodules/CMSIS/Include/ studio:/sdk/submodules/emlib/inc/ studio:/sdk/submodules/emdrv/common/inc/ studio:/sdk/submodules/emdrv/sleep/inc/ studio:/sdk/submodules/emdrv/aesdrv/inc/ studio:/sdk/submodules/emdrv/aesdrv/src/ studio:/sdk/submodules/emdrv/trace/inc/ studio:/sdk/submodules/emdrv/gpiointerrupt/inc/ studio:/sdk/submodules/emdrv/ecode/ studio:/sdk/hal/micro/cortexm3/efm32/config/ studio:/sdk/submodules/emdrv/uartdrv/inc/ studio:/sdk/submodules/emdrv/spidrv/inc/ studio:/sdk/submodules/emdrv/dmadrv/inc/ studio:/sdk/submodules/emdrv/ustimer/inc/ studio:/sdk/submodules/emdrv/rtcdrv/inc/ studio:/sdk/submodules/kits/SLWSTK6100A_EFR32MG/config/ studio:/sdk/submodules/kits/common/bsp/ studio:/sdk/submodules/kits/common/drivers/ studio:/sdk/submodules/efrseq/rfprotocol/ieee802154/cortex/ studio:/sdk/submodules/efrseq/common/cortex/ studio:/sdk/submodules/s029_efr4fpga_drv/inc/ studio:/sdk/submodules/reptile/glib/ studio:/sdk/submodules/reptile/glib/glib/ studio:/sdk/submodules/reptile/glib/dmd/ studio:/sdk/submodules/emdrv/tempdrv/inc/" cppBuildConfig.builtinLibraryFiles="" cppBuildConfig.builtinLibraryNames="" cppBuildConfig.builtinLibraryObjects="" cppBuildConfig.builtinLibraryPaths="" cppBuildConfig.builtinMacros="CORTEXM3 CONFIGURATION_HEADER APPLICATION_TOKEN_HEADER CORTEXM3_EFM32_MICRO CORTEXM3_EFR32_MICRO CORTEXM3_EFR32 PHY_EFR32 CORTEXM3 CONFIGURATION_HEADER APPLICATION_TOKEN_HEADER CORTEXM3_EFM32_MICRO CORTEXM3_EFR32_MICRO CORTEXM3_EFR32 PHY_EFR32" moduleId="com.silabs.ide.project.core" projectCommon.buildArtifactType="EXE" projectCommon.referencedModules="[{&quot;module&quot;:&quot;&lt;project:MModule xmlns:project=\&quot;http://www.silabs.com/sls/Project.ecore\&quot; builtin=\&quot;true\&quot; id=\&quot;com.silabs.ember.module.plugin.external.znet.afv2.EmberZNet 5.7.2.0 GA SoC.simple-metering-client-base.:5.7.2.-1733634126\&quot;&gt;\r\n  &lt;inclusions pattern=\&quot;simple-metering-client(/.*){0,1}/simple-metering-client.c\&quot;/&gt;\r\n  &lt;inclusions pattern=\&quot;simple-metering-client(/.*){0,1}/simple-metering-client-cli.c\&quot;/&gt;\r\n&lt;/project:MModule&gt;&quot;,&quot;builtinExcludes&quot;:[],&quot;builtin&quot;:true,&quot;builtinSources&quot;:[&quot;simple-metering-client/simple-metering-client.c&quot;,&quot;simple-metering-client/simple-metering-client-cli.c&quot;]},{&quot;module&quot;:&quot;&lt;project:MModule xmlns:project=\&quot;http://www.silabs.com/sls/Project.ecore\&quot; builtin=\&quot;true\&quot; id=\&quot;com.silabs.ember.module.template.external.znet.afv2.EmberZNet 5.7.2.0 GA SoC.base:5.7.2.-1733634126\&quot;&gt;\r\n  &lt;inclusions pattern=\&quot;.*\&quot;/&gt;\r\n&lt;/project:MModule&gt;&quot;,&quot;builtinExcludes&quot;:[],&quot;builtin&quot;:true,&quot;builtinSources&quot;:[&quot;efr32/token.c&quot;,&quot;efr32/token-def.c&quot;,&quot;efr32/sleep-efm32.c&quot;,&quot;efr32/graphics.c&quot;,&quot;efr32/com.c&quot;,&quot;efr32/mpu.c&quot;,&quot;efr32/micro-common.c&quot;,&quot;efr32/mfg-token.c&quot;,&quot;efr32/led.c&quot;,&quot;efr32/bsp_stk_leds.c&quot;,&quot;efr32/isr-stubs.s79&quot;,&quot;efr32/faults.s79&quot;,&quot;efr32/diagnostic.c&quot;,&quot;efr32/cstartup-common.c&quot;,&quot;efr32/buzzer.c&quot;,&quot;efr32/button.c&quot;,&quot;efr32/adc.c&quot;,&quot;efr32/micro.c&quot;,&quot;efr32/ext-device.c&quot;,&quot;efr32/assert-crash-handlers.c&quot;,&quot;efr32/dmadrv.c&quot;,&quot;efr32/gpiointerrupt.c&quot;,&quot;efr32/rtcdriver.c&quot;,&quot;efr32/sleep.c&quot;,&quot;efr32/tempdrv.c&quot;,&quot;efr32/trace.c&quot;,&quot;efr32/uartdrv.c&quot;,&quot;efr32/ustimer.c&quot;,&quot;efr32/em_emu.c&quot;,&quot;efr32/em_gpio.c&quot;,&quot;efr32/em_int.c&quot;,&quot;efr32/em_ldma.c&quot;,&quot;efr32/em_leuart.c&quot;,&quot;efr32/em_mpu.c&quot;,&quot;efr32/em_msc.c&quot;,&quot;efr32/em_prs.c&quot;,&quot;efr32/em_rmu.c&quot;,&quot;efr32/em_rtcc.c&quot;,&quot;efr32/em_system.c&quot;,&quot;efr32/em_timer.c&quot;,&quot;efr32/em_usart.c&quot;,&quot;efr32/em_wdog.c&quot;,&quot;efr32/em_cmu.c&quot;,&quot;efr32/em_adc.c&quot;,&quot;efr32/glib.c&quot;,&quot;efr32/glib_bitmap.c&quot;,&quot;efr32/glib_circle.c&quot;,&quot;efr32/glib_line.c&quot;,&quot;efr32/glib_rectangle.c&quot;,&quot;efr32/glib_string.c&quot;,&quot;efr32/glib_font_normal_8x8.c&quot;,&quot;efr32/glib_font_narrow_6x8.c&quot;,&quot;efr32/glib_font_number_16x20.c&quot;,&quot;zigbee-device-library.c&quot;,&quot;zigbee-device-common.c&quot;,&quot;zdo-cli.c&quot;,&quot;zcl-cli.c&quot;,&quot;util.c&quot;,&quot;time-util.c&quot;,&quot;service-discovery-soc.c&quot;,&quot;service-discovery-common.c&quot;,&quot;serial.c&quot;,&quot;security-cli.c&quot;,&quot;security-address-cache.c&quot;,&quot;random.c&quot;,&quot;process-global-message.c&quot;,&quot;process-cluster-message.c&quot;,&quot;print.c&quot;,&quot;print-formatter.c&quot;,&quot;plugin-cli.c&quot;,&quot;option-cli.c&quot;,&quot;network-cli.c&quot;,&quot;multi-network.c&quot;,&quot;message.c&quot;,&quot;mem-util.c&quot;,&quot;library.c&quot;,&quot;endian.c&quot;,&quot;ember-configuration.c&quot;,&quot;em_usbint.c&quot;,&quot;em_usbhal.c&quot;,&quot;em_usbdep.c&quot;,&quot;em_usbdch9.c&quot;,&quot;em_usbd.c&quot;,&quot;em_usbtimer.c&quot;,&quot;crypto-state.c&quot;,&quot;crc.c&quot;,&quot;core-cli.c&quot;,&quot;command-interpreter2.c&quot;,&quot;client-api.c&quot;,&quot;callbacks.c&quot;,&quot;descriptors.c&quot;,&quot;attribute-table.c&quot;,&quot;attribute-storage.c&quot;,&quot;attribute-size.c&quot;,&quot;af-trust-center.c&quot;,&quot;af-security-common.c&quot;,&quot;af-node.c&quot;,&quot;af-main-soc.c&quot;,&quot;af-main-common.c&quot;,&quot;af-event.c&quot;]},{&quot;module&quot;:&quot;&lt;project:MModule xmlns:project=\&quot;http://www.silabs.com/sls/Project.ecore\&quot; builtin=\&quot;true\&quot; id=\&quot;com.silabs.ember.module.plugin.external.znet.afv2.EmberZNet 5.7.2.0 GA SoC.time-server-base.:5.7.2.-1733634126\&quot;&gt;\r\n  &lt;inclusions pattern=\&quot;time-server(/.*){0,1}/time-server.c\&quot;/&gt;\r\n&lt;/project:MModule&gt;&quot;,&quot;builtinExcludes&quot;:[],&quot;builtin&quot;:true,&quot;builtinSources&quot;:[&quot;time-server/time-server.c&quot;]}]" projectCommon.toolchainId="com.silabs.ide.si32.iar:7.50.2.10312" projectCommon.userSettings="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;&#10;&lt;project name=&quot;com.silabs.ember.stack.znet.addition&quot; partCompatibility=&quot;com.silabs.mcu.si32.ember.em34x com.silabs.mcu.si32.ember.em35x com.silabs.mcu.si32.efr32&quot; toolchainCompatibility=&quot;&quot; sdkCompatibility=&quot;&quot; propertyScope=&quot;project&quot; contentRoot=&quot;.&quot;&gt;&#13;&#10;  &lt;folder name=&quot;emlib&quot; partCompatibility=&quot;com.silabs.mcu.si32.efr32&quot;&gt;&#13;&#10;    &lt;file name=&quot;system_efr32mg1b.c&quot; partCompatibility=&quot;com.silabs.mcu.si32.efr32&quot; uri=&quot;$(sdkInstallationPath:default())/submodules/Device/SiliconLabs/EFR32MG1B/Source/system_efr32mg1b.c&quot;/&gt;&#13;&#10;  &lt;/folder&gt;&#13;&#10;  &lt;file name=&quot;ZigbeeCoor_board.h&quot; uri=&quot;$(sdkInstallationPath:default())/./app/builder/ZigbeeCoor/ZigbeeCoor_board.h&quot;/&gt;&#13;&#10;  &lt;file name=&quot;ZigbeeCoor_endpoint_config.h&quot; uri=&quot;$(sdkInstallationPath:default())/./app/builder/ZigbeeCoor/ZigbeeCoor_endpoint_config.h&quot;/&gt;&#13;&#10;  &lt;file name=&quot;ZigbeeCoor_callbacks.c&quot; uri=&quot;$(sdkInstallationPath:default())/./app/builder/ZigbeeCoor/ZigbeeCoor_callbacks.c&quot;/&gt;&#13;&#10;  &lt;file name=&quot;ZigbeeCoor.h&quot; uri=&quot;$(sdkInstallationPath:default())/./app/builder/ZigbeeCoor/ZigbeeCoor.h&quot;/&gt;&#13;&#10;  &lt;file name=&quot;ZigbeeCoor_tokens.h&quot; uri=&quot;$(sdkInstallationPath:default())/./app/builder/ZigbeeCoor/ZigbeeCoor_tokens.h&quot;/&gt;&#13;&#10;  &lt;file name=&quot;ZigbeeCoor.ewd&quot; uri=&quot;$(sdkInstallationPath:default())/./app/builder/ZigbeeCoor/ZigbeeCoor.ewd&quot;/&gt;&#13;&#10;  &lt;file name=&quot;ZigbeeCoor.ewp&quot; uri=&quot;$(sdkInstallationPath:default())/./app/builder/ZigbeeCoor/ZigbeeCoor.ewp&quot;/&gt;&#13;&#10;  &lt;file name=&quot;ZigbeeCoor.eww&quot; uri=&quot;$(sdkInstallationPath:default())/./app/builder/ZigbeeCoor/ZigbeeCoor.eww&quot;/&gt;&#13;&#10;  &lt;file name=&quot;ZigbeeCoor.bat&quot; uri=&quot;$(sdkInstallationPath:default())/./app/builder/ZigbeeCoor/ZigbeeCoor.bat&quot;/&gt;&#13;&#10;  &lt;includePath partCompatibility=&quot;com.silabs.mcu.si32.efr32&quot; languageCompatibility=&quot;c asm&quot; uri=&quot;$(sdkInstallationPath:default())/submodules/Device/SiliconLabs/$(partGroupName:toUpper)/Include/&quot;/&gt;&#13;&#10;  &lt;includePath uri=&quot;studio:/sdk/submodules/kits/LumiBoard/config&quot;/&gt;&#13;&#10;  &lt;includePath uri=&quot;studio:/sdk/submodules/kits/common&quot;/&gt;&#13;&#10;  &lt;includePath uri=&quot;studio:/sdk/submodules/kits/LumiBoard/config/Com&quot;/&gt;&#13;&#10;  &lt;includePath uri=&quot;studio:/sdk/app/builder/ZigbeeCoor&quot;/&gt;&#13;&#10;  &lt;includePath uri=&quot;studio:/project/&quot;/&gt;&#13;&#10;  &lt;macroDefinition languageCompatibility=&quot;c asm&quot; name=&quot;CORTEXM3_EFR32MG1B232F256GM32_MICRO&quot; value=&quot;1&quot;/&gt;&#13;&#10;  &lt;macroDefinition languageCompatibility=&quot;c asm&quot; name=&quot;CORTEXM3_EFR32MG1B232F256GM32&quot; value=&quot;1&quot;/&gt;&#13;&#10;  &lt;macroDefinition languageCompatibility=&quot;c asm&quot; name=&quot;PLATFORM_HEADER&quot; value=&quot;&amp;quot;hal/micro/cortexm3/compiler/iar.h&amp;quot;&quot;/&gt;&#13;&#10;  &lt;macroDefinition languageCompatibility=&quot;c asm&quot; name=&quot;ZA_GENERATED_HEADER&quot; value=&quot;&amp;quot;app/builder/ZigbeeCoor/ZigbeeCoor.h&amp;quot;&quot;/&gt;&#13;&#10;  &lt;macroDefinition languageCompatibility=&quot;c asm&quot; name=&quot;GENERATED_TOKEN_HEADER&quot; value=&quot;&amp;quot;app/builder/ZigbeeCoor/ZigbeeCoor_tokens.h&amp;quot;&quot;/&gt;&#13;&#10;  &lt;macroDefinition languageCompatibility=&quot;c asm&quot; name=&quot;ATTRIBUTE_STORAGE_CONFIGURATION&quot; value=&quot;&amp;quot;app/builder/ZigbeeCoor/ZigbeeCoor_endpoint_config.h&amp;quot;&quot;/&gt;&#13;&#10;  &lt;macroDefinition languageCompatibility=&quot;c asm&quot; name=&quot;BOARD_HEADER&quot; value=&quot;&amp;quot;app/builder/ZigbeeCoor/ZigbeeCoor_board.h&amp;quot;&quot;/&gt;&#13;&#10;  &lt;macroDefinition partCompatibility=&quot;com.silabs.mcu.si32.ember com.silabs.mcu.si32.efr32&quot; languageCompatibility=&quot;c asm&quot; name=&quot;NULL_BTL&quot; value=&quot;1&quot;/&gt;&#13;&#10;  &lt;macroDefinition partCompatibility=&quot;com.silabs.mcu.si32.efr32&quot; languageCompatibility=&quot;c asm&quot; name=&quot;EFR32MG1B&quot; value=&quot;1&quot;/&gt;&#13;&#10;  &lt;macroDefinition partCompatibility=&quot;com.silabs.mcu.si32.efr32&quot; languageCompatibility=&quot;c asm&quot; name=&quot;EFR32MG1B232F256GM32&quot; value=&quot;1&quot;/&gt;&#13;&#10;  &lt;macroDefinition name=&quot;EMBER_AF_API_EMBER_TYPES&quot; value=&quot;&amp;quot;stack/include/ember-types.h&amp;quot;&quot;/&gt;&#13;&#10;  &lt;libraryFile partCompatibility=&quot;com.silabs.mcu.si32.ember.em34x com.silabs.mcu.si32.ember.em35x&quot; uri=&quot;$(sdkInstallationPath)/build/hal-library-cortexm3-iar-$(partName:toLower)-em3xx/hal-library.a&quot;/&gt;&#13;&#10;  &lt;libraryFile partCompatibility=&quot;com.silabs.mcu.si32.ember.em35xp2p&quot; uri=&quot;$(sdkInstallationPath)/build/hal-library-cortexm3-iar-$(partName:toLower)-pro2plus/hal-library.a&quot;/&gt;&#13;&#10;  &lt;libraryFile partCompatibility=&quot;com.silabs.mcu.si32.efr32&quot; uri=&quot;$(sdkInstallationPath)/build/hal-library-cortexm3-iar-efr32mg1b-efr32/hal-library.a&quot;/&gt;&#13;&#10;  &lt;libraryFile uri=&quot;studio:/sdk/build/cbke-163k1-stub-library-cortexm3-iar-efr32mg1b-efr32/cbke-163k1-stub-library.a&quot;/&gt;&#13;&#10;  &lt;libraryFile uri=&quot;studio:/sdk/build/gp-stub-library-cortexm3-iar-efr32mg1b-efr32/gp-stub-library.a&quot;/&gt;&#13;&#10;  &lt;libraryFile uri=&quot;studio:/sdk/build/zigbee-pro-stack-cortexm3-iar-efr32mg1b-efr32/zigbee-pro-stack.a&quot;/&gt;&#13;&#10;  &lt;libraryFile uri=&quot;studio:/sdk/build/cbke-library-dsa-verify-283k1-stub-cortexm3-iar-efr32mg1b-efr32/cbke-library-dsa-verify-283k1-stub.a&quot;/&gt;&#13;&#10;  &lt;libraryFile uri=&quot;studio:/sdk/build/rf4ce-stack-stub-library-cortexm3-iar-efr32mg1b-efr32/rf4ce-stack-stub-library.a&quot;/&gt;&#13;&#10;  &lt;libraryFile uri=&quot;studio:/sdk/build/sim-eeprom1-library-cortexm3-iar-efr32mg1b-efr32/sim-eeprom1-library.a&quot;/&gt;&#13;&#10;  &lt;libraryFile uri=&quot;studio:/sdk/build/hal-library-cortexm3-iar-efr32mg1b-efr32/hal-library.a&quot;/&gt;&#13;&#10;  &lt;libraryFile uri=&quot;studio:/sdk/build/cbke-library-dsa-verify-stub-cortexm3-iar-efr32mg1b-efr32/cbke-library-dsa-verify-stub.a&quot;/&gt;&#13;&#10;  &lt;libraryFile uri=&quot;studio:/sdk/build/cbke-library-dsa-sign-stub-cortexm3-iar-efr32mg1b-efr32/cbke-library-dsa-sign-stub.a&quot;/&gt;&#13;&#10;  &lt;libraryFile uri=&quot;studio:/sdk/build/packet-validate-library-cortexm3-iar-efr32mg1b-efr32/packet-validate-library.a&quot;/&gt;&#13;&#10;  &lt;libraryFile uri=&quot;studio:/sdk/build/security-library-link-keys-stub-cortexm3-iar-efr32mg1b-efr32/security-library-link-keys-stub.a&quot;/&gt;&#13;&#10;  &lt;libraryFile uri=&quot;studio:/sdk/build/cbke-stub-library-cortexm3-iar-efr32mg1b-efr32/cbke-stub-library.a&quot;/&gt;&#13;&#10;  &lt;libraryFile uri=&quot;studio:/sdk/build/alarm-stub-library-cortexm3-iar-efr32mg1b-efr32/alarm-stub-library.a&quot;/&gt;&#13;&#10;  &lt;libraryFile uri=&quot;studio:/sdk/build/end-device-bind-stub-library-cortexm3-iar-efr32mg1b-efr32/end-device-bind-stub-library.a&quot;/&gt;&#13;&#10;  &lt;libraryFile uri=&quot;studio:/sdk/build/debug-basic-library-cortexm3-iar-efr32mg1b-efr32/debug-basic-library.a&quot;/&gt;&#13;&#10;  &lt;libraryFile uri=&quot;studio:/sdk/build/cbke-283k1-stub-library-cortexm3-iar-efr32mg1b-efr32/cbke-283k1-stub-library.a&quot;/&gt;&#13;&#10;  &lt;libraryFile uri=&quot;studio:/sdk/build/install-code-library-stub-cortexm3-iar-efr32mg1b-efr32/install-code-library-stub.a&quot;/&gt;&#13;&#10;  &lt;libraryFile uri=&quot;studio:/sdk/build/binding-table-library-cortexm3-iar-efr32mg1b-efr32/binding-table-library.a&quot;/&gt;&#13;&#10;  &lt;libraryFile uri=&quot;studio:/sdk/build/enhanced-beacon-request-stub-library-cortexm3-iar-efr32mg1b-efr32/enhanced-beacon-request-stub-library.a&quot;/&gt;&#13;&#10;  &lt;libraryFile uri=&quot;studio:/sdk/build/debug-extended-stub-library-cortexm3-iar-efr32mg1b-efr32/debug-extended-stub-library.a&quot;/&gt;&#13;&#10;  &lt;libraryFile uri=&quot;studio:/sdk/build/security-library-core-cortexm3-iar-efr32mg1b-efr32/security-library-core.a&quot;/&gt;&#13;&#10;  &lt;libraryFile uri=&quot;studio:/sdk/build/multi-network-stub-library-cortexm3-iar-efr32mg1b-efr32/multi-network-stub-library.a&quot;/&gt;&#13;&#10;  &lt;libraryFile uri=&quot;studio:/sdk/build/zll-stub-library-cortexm3-iar-efr32mg1b-efr32/zll-stub-library.a&quot;/&gt;&#13;&#10;  &lt;toolOption toolId=&quot;iar.arm.toolchain.linker.v5.4.0&quot; optionId=&quot;iar.arm.toolchain.linker.option.configSymbolDefs.v6.2.0&quot; value=&quot;NULL_BTL=1 &quot;/&gt;&#13;&#10;  &lt;toolOption partCompatibility=&quot;com.silabs.mcu.si32.ember.em34x com.silabs.mcu.si32.ember.em35x com.silabs.mcu.si32.ember.em35xp2p&quot; toolId=&quot;iar.arm.toolchain.linker.v5.4.0&quot; optionId=&quot;iar.arm.toolchain.linker.option.icfFile.v5.4.0&quot; value=&quot;C:/SiliconLabs/EmberZNet5.7.2-GA/hal/micro/cortexm3/em35x/efr32mg1b232f256gm32/iar-cfg.icf&quot;/&gt;&#13;&#10;  &lt;toolOption partCompatibility=&quot;com.silabs.mcu.si32.efr32&quot; toolId=&quot;iar.arm.toolchain.linker.v5.4.0&quot; optionId=&quot;iar.arm.toolchain.linker.option.icfFile.v5.4.0&quot; value=&quot;C:/SiliconLabs/EmberZNet5.7.2-GA/hal/micro/cortexm3/efm32/efr32/iar-cfg.icf&quot;/&gt;&#13;&#10;  &lt;postbuildStep&gt; cmd //c C:\SiliconLabs\EmberZNet5.7.2-GA/app/builder/ZigbeeCoor/ZigbeeCoor.bat ${BuildArtifactFileBaseName} ..&lt;/postbuildStep&gt;&#13;&#10;&lt;/project&gt;&#13;&#10;"/>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="com.iar.cdt.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=com.iar.cdt.buildArtefactType.exe" cleanCommand="rm -rf" description="" id="com.silabs.ide.si32.iar.debug#com.silabs.ide.si32.iar:7.50.2.10312" name="IAR ARM - Debug" parent="iar.arm.toolchain.project.exe.configuration.debug.v5.4.0" postbuildStep=" cmd //c C:\SiliconLabs\EmberZNet5.7.2-GA/app/builder/ZigbeeCoor/ZigbeeCoor.bat ${BuildArtifactFileBaseName} ..">
+					<folderInfo id="com.silabs.ide.si32.iar.debug#com.silabs.ide.si32.iar:7.50.2.10312." name="/" resourcePath="">
+						<toolChain id="iar.arm.toolchain.project.exe.configuration.debug.toolchain.v5.4.0.1886815778" name="IAR Toolchain for ARM - 6.x" superClass="iar.arm.toolchain.project.exe.configuration.debug.toolchain.v5.4.0">
+							<option id="iar.arm.toolchain.option.cpuCore.v5.4.0.1868800889" name="Processor core:" superClass="iar.arm.toolchain.option.cpuCore.v5.4.0" value="iar.arm.toolchain.option.cpuCore.Cortex-M4F.v5.5.0" valueType="enumerated"/>
+							<option id="iar.arm.toolchain.option.endianMode.v5.4.0.1468902720" name="Endian mode:" superClass="iar.arm.toolchain.option.endianMode.v5.4.0"/>
+							<option id="iar.arm.toolchain.option.bigEndianFormat.v5.4.0.583545737" name="Big-endian format:" superClass="iar.arm.toolchain.option.bigEndianFormat.v5.4.0"/>
+							<option id="iar.arm.toolchain.option.printfFormatter.v5.4.0.1382921979" name="Printf formatter:" superClass="iar.arm.toolchain.option.printfFormatter.v5.4.0"/>
+							<option id="iar.arm.toolchain.option.scanfFormatter.v5.4.0.2029756440" name="Scanf formatter:" superClass="iar.arm.toolchain.option.scanfFormatter.v5.4.0"/>
+							<option id="iar.arm.toolchain.option.bufferedOutput.v6.1.0.88593616" name="Buffered terminal output" superClass="iar.arm.toolchain.option.bufferedOutput.v6.1.0"/>
+							<option id="iar.arm.toolchain.option.mfc.v5.5.2.1387998321" name="Enable multi-file compilation" superClass="iar.arm.toolchain.option.mfc.v5.5.2"/>
+							<option id="iar.arm.toolchain.option.fpu.v5.4.0.389255736" name="FPU:" superClass="iar.arm.toolchain.option.fpu.v5.4.0" value="iar.arm.toolchain.common.option.fpu.VFPv4.v5.5.0" valueType="enumerated"/>
+							<option id="iar.arm.toolchain.option.libraryConfig.v5.4.0.1966968606" name="Library:" superClass="iar.arm.toolchain.option.libraryConfig.v5.4.0"/>
+							<option id="iar.arm.toolchain.option.misra-c.enable.980347086" name="Enable MISRA-C" superClass="iar.arm.toolchain.option.misra-c.enable"/>
+							<option id="iar.arm.toolchain.option.useCMSIS.v6.2.2.1848176826" name="Use CMSIS" superClass="iar.arm.toolchain.option.useCMSIS.v6.2.2"/>
+							<option id="iar.arm.toolchain.option.semihosted.v5.4.0.371812824" name="Include semihosting interface" superClass="iar.arm.toolchain.option.semihosted.v5.4.0" value="false" valueType="boolean"/>
+							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF;com.silabs.ide.debug.core.BIN;com.silabs.ide.debug.core.HEX;com.silabs.ide.debug.core.S37" id="iar.arm.toolchain.targetPlatform.v5.4.0.1526937585" isAbstract="false" name="IAR Target platform for ARM (ELF)" osList="win32,linux" superClass="iar.arm.toolchain.targetPlatform.v5.4.0"/>
+							<builder buildPath="${workspace_loc:/ZigbeeCoor}/IAR ARM - Debug" id="cdt.managedbuild.target.gnu.builder.base.60462875" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="cdt.managedbuild.target.gnu.builder.base"/>
+							<tool id="iar.arm.toolchain.compiler.v5.4.1.757370182" name="IAR C/C++ Compiler for ARM" superClass="iar.arm.toolchain.compiler.v5.4.1">
+								<option defaultValue="true" id="iar.arm.toolchain.compiler.option.debugInfo.v5.4.0.1502233233" name="Generate debug information" superClass="iar.arm.toolchain.compiler.option.debugInfo.v5.4.0" valueType="boolean"/>
+								<option defaultValue="iar.arm.toolchain.compiler.option.optLevel.none.v5.4.0" id="iar.arm.toolchain.compiler.option.optLevel.v5.4.0.779662147" name="Optimization level:" superClass="iar.arm.toolchain.compiler.option.optLevel.v5.4.0" value="iar.arm.toolchain.compiler.option.optLevel.highSize.v5.4.0" valueType="enumerated"/>
+								<option id="iar.arm.toolchain.compiler.option.optCSE.v5.4.0.2115415009" name="Disable common subexpression elimination" superClass="iar.arm.toolchain.compiler.option.optCSE.v5.4.0" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.compiler.option.optUnroll.v5.4.0.1159548041" name="Disable loop unrolling" superClass="iar.arm.toolchain.compiler.option.optUnroll.v5.4.0" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.compiler.option.optInline.v5.4.0.334392250" name="Disable function inlining" superClass="iar.arm.toolchain.compiler.option.optInline.v5.4.0" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.compiler.option.optCodeMotion.v5.4.0.905567903" name="Disable code motion" superClass="iar.arm.toolchain.compiler.option.optCodeMotion.v5.4.0" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.compiler.option.optAliasAnalysis.v5.4.0.776419347" name="Disable type-based alias analysis" superClass="iar.arm.toolchain.compiler.option.optAliasAnalysis.v5.4.0" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.compiler.option.optStaticClustering.v5.4.0.133341534" name="Disable static clustering" superClass="iar.arm.toolchain.compiler.option.optStaticClustering.v5.4.0" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.compiler.option.optScheduling.v5.4.0.1204574462" name="Disable instruction scheduling" superClass="iar.arm.toolchain.compiler.option.optScheduling.v5.4.0" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.compiler.option.language.v6.1.0.877060079" name="Language" superClass="iar.arm.toolchain.compiler.option.language.v6.1.0"/>
+								<option id="iar.arm.toolchain.compiler.option.cppdialect.v6.1.0.1089378589" name="C++ dialect" superClass="iar.arm.toolchain.compiler.option.cppdialect.v6.1.0"/>
+								<option id="iar.arm.toolchain.compiler.option.cpuMode.v5.4.0.171246296" name="Processor mode:" superClass="iar.arm.toolchain.compiler.option.cpuMode.v5.4.0" value="iar.arm.toolchain.compiler.option.cpuMode.thumb.v5.4.0" valueType="enumerated"/>
+								<option id="iar.arm.toolchain.compiler.option.interwork.v5.4.0.230935267" name="Generate interwork code" superClass="iar.arm.toolchain.compiler.option.interwork.v5.4.0" value="false" valueType="boolean"/>
+								<option id="iar.arm.toolchain.compiler.option.treatAsErrors.v5.4.0.1922308532" name="Treat these as errors:" superClass="iar.arm.toolchain.compiler.option.treatAsErrors.v5.4.0"/>
+								<option id="iar.arm.toolchain.compiler.option.treatAsRemarks.v5.4.0.1070751451" name="Treat these as remarks:" superClass="iar.arm.toolchain.compiler.option.treatAsRemarks.v5.4.0"/>
+								<option id="iar.arm.toolchain.compiler.option.suppress.v5.4.0.1604818544" name="Suppress these diagnostics:" superClass="iar.arm.toolchain.compiler.option.suppress.v5.4.0" valueType="stringList">
+									<listOptionValue builtIn="false" value="Pa050"/>
+									<listOptionValue builtIn="false" value="Pa050"/>
+									<listOptionValue builtIn="false" value="Pa050"/>
+									<listOptionValue builtIn="false" value="Pa050"/>
+									<listOptionValue builtIn="false" value="Pa050"/>
+								</option>
+								<option id="iar.arm.toolchain.compiler.option.additionalUserOptions.385641285" name="Use command line options" superClass="iar.arm.toolchain.compiler.option.additionalUserOptions" value="--no_path_in_file_macros --separate_cluster_for_initialized_variables" valueType="string"/>
+								<option id="iar.arm.toolchain.compiler.option.treatAsWarnings.v5.4.0.2094492118" name="Treat these as warnings:" superClass="iar.arm.toolchain.compiler.option.treatAsWarnings.v5.4.0"/>
+								<option id="iar.arm.toolchain.compiler.option.cppInlineSemantics.v6.1.0.1584149536" name="Use C++ inline semantics" superClass="iar.arm.toolchain.compiler.option.cppInlineSemantics.v6.1.0" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.compiler.option.incPaths.v5.4.0.1305329749" name="Additional include directories" superClass="iar.arm.toolchain.compiler.option.incPaths.v5.4.0" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/Device/SiliconLabs/EFR32MG1B/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/kits/LumiBoard/config&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/kits/common&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/kits/LumiBoard/config/Com&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/app/builder/ZigbeeCoor&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/stack&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/app/framework/include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/app/util&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/hal&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/hal//micro/cortexm3/efm32&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/hal//micro/cortexm3/efm32/efr32&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/CMSIS/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emlib/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/common/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/sleep/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/aesdrv/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/aesdrv/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/trace/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/gpiointerrupt/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/ecode&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/hal//micro/cortexm3/efm32/config&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/uartdrv/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/spidrv/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/dmadrv/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/ustimer/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/rtcdrv/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/kits/SLWSTK6100A_EFR32MG/config&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/kits/common/bsp&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/kits/common/drivers&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/efrseq/rfprotocol/ieee802154/cortex&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/efrseq/common/cortex&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/s029_efr4fpga_drv/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/reptile/glib&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/reptile/glib/glib&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/reptile/glib/dmd&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/tempdrv/inc&quot;"/>
+								</option>
+								<option id="iar.arm.toolchain.compiler.option.defines.v5.4.0.2054769010" name="Defined Symbols:" superClass="iar.arm.toolchain.compiler.option.defines.v5.4.0" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="CORTEXM3_EFR32MG1B232F256GM32_MICRO=1"/>
+									<listOptionValue builtIn="false" value="CORTEXM3_EFR32MG1B232F256GM32=1"/>
+									<listOptionValue builtIn="false" value="PLATFORM_HEADER=&quot;hal/micro/cortexm3/compiler/iar.h&quot;"/>
+									<listOptionValue builtIn="false" value="ZA_GENERATED_HEADER=&quot;app/builder/ZigbeeCoor/ZigbeeCoor.h&quot;"/>
+									<listOptionValue builtIn="false" value="GENERATED_TOKEN_HEADER=&quot;app/builder/ZigbeeCoor/ZigbeeCoor_tokens.h&quot;"/>
+									<listOptionValue builtIn="false" value="ATTRIBUTE_STORAGE_CONFIGURATION=&quot;app/builder/ZigbeeCoor/ZigbeeCoor_endpoint_config.h&quot;"/>
+									<listOptionValue builtIn="false" value="BOARD_HEADER=&quot;app/builder/ZigbeeCoor/ZigbeeCoor_board.h&quot;"/>
+									<listOptionValue builtIn="false" value="NULL_BTL=1"/>
+									<listOptionValue builtIn="false" value="EFR32MG1B=1"/>
+									<listOptionValue builtIn="false" value="EFR32MG1B232F256GM32=1"/>
+									<listOptionValue builtIn="false" value="EMBER_AF_API_EMBER_TYPES=&quot;stack/include/ember-types.h&quot;"/>
+									<listOptionValue builtIn="false" value="CORTEXM3=1"/>
+									<listOptionValue builtIn="false" value="CONFIGURATION_HEADER=&quot;app/framework/util/config.h&quot;"/>
+									<listOptionValue builtIn="false" value="APPLICATION_TOKEN_HEADER=&quot;app/framework/util/tokens.h&quot;"/>
+									<listOptionValue builtIn="false" value="CORTEXM3_EFM32_MICRO=1"/>
+									<listOptionValue builtIn="false" value="CORTEXM3_EFR32_MICRO=1"/>
+									<listOptionValue builtIn="false" value="CORTEXM3_EFR32=1"/>
+									<listOptionValue builtIn="false" value="PHY_EFR32=1"/>
+								</option>
+								<inputType id="iar.arm.toolchain.compiler.inputType.v5.4.1.1440939453" name="IAR C/C++ Compiler Input Type" superClass="iar.arm.toolchain.compiler.inputType.v5.4.1"/>
+							</tool>
+							<tool id="iar.arm.toolchain.assembler.v5.4.0.1246224006" name="IAR Assembler for ARM" superClass="iar.arm.toolchain.assembler.v5.4.0">
+								<option defaultValue="true" id="iar.arm.toolchain.assembler.option.debugInfo.v5.4.0.1335570638" name="Generate debug information" superClass="iar.arm.toolchain.assembler.option.debugInfo.v5.4.0" valueType="boolean"/>
+								<option id="iar.arm.toolchain.assembler.option.maxErrors.v5.4.0.1810723306" name="Max number of errors:" superClass="iar.arm.toolchain.assembler.option.maxErrors.v5.4.0" value="100" valueType="string"/>
+								<option id="iar.arm.toolchain.assembler.option.linesPerPage.v5.4.0.1134610340" name="Lines/page:" superClass="iar.arm.toolchain.assembler.option.linesPerPage.v5.4.0" value="80" valueType="string"/>
+								<option id="iar.arm.toolchain.assembler.option.asmListContents.v6.2.0.1063199854" name="Include listing" superClass="iar.arm.toolchain.assembler.option.asmListContents.v6.2.0" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.assembler.option.includeMacroExpansions.v6.2.0.1334633790" name="Macro expansions" superClass="iar.arm.toolchain.assembler.option.includeMacroExpansions.v6.2.0" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.assembler.option.generateListFile.v5.4.0.652830393" name="Output list file" superClass="iar.arm.toolchain.assembler.option.generateListFile.v5.4.0" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.assembler.option.tabSpacing.v5.4.0.1695620066" name="Tab spacing:" superClass="iar.arm.toolchain.assembler.option.tabSpacing.v5.4.0" value="2" valueType="string"/>
+								<option id="iar.arm.toolchain.assembler.option.omitHeader.v5.4.0.1272208238" name="Omit header" superClass="iar.arm.toolchain.assembler.option.omitHeader.v5.4.0" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.assembler.option.includePaths.v5.4.0.1128603573" name="Additional include directories:" superClass="iar.arm.toolchain.assembler.option.includePaths.v5.4.0" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/Device/SiliconLabs/EFR32MG1B/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/kits/LumiBoard/config&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/kits/common&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/kits/LumiBoard/config/Com&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/app/builder/ZigbeeCoor&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/stack&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/hal&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/hal//micro/cortexm3/efm32&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/hal//micro/cortexm3/efm32/efr32&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/CMSIS/Include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emlib/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/common/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/sleep/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/aesdrv/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/aesdrv/src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/trace/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/gpiointerrupt/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/ecode&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/hal//micro/cortexm3/efm32/config&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/uartdrv/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/spidrv/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/dmadrv/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/ustimer/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/rtcdrv/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/kits/SLWSTK6100A_EFR32MG/config&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/kits/common/bsp&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/kits/common/drivers&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/efrseq/rfprotocol/ieee802154/cortex&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/efrseq/common/cortex&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/s029_efr4fpga_drv/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/reptile/glib&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/reptile/glib/glib&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/reptile/glib/dmd&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${StudioSdkPath}/submodules/emdrv/tempdrv/inc&quot;"/>
+								</option>
+								<option id="iar.arm.toolchain.assembler.option.definedSymbols.v5.4.0.323782086" name="Defined symbols:" superClass="iar.arm.toolchain.assembler.option.definedSymbols.v5.4.0" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="CORTEXM3_EFR32MG1B232F256GM32_MICRO=1"/>
+									<listOptionValue builtIn="false" value="CORTEXM3_EFR32MG1B232F256GM32=1"/>
+									<listOptionValue builtIn="false" value="PLATFORM_HEADER=&quot;hal/micro/cortexm3/compiler/iar.h&quot;"/>
+									<listOptionValue builtIn="false" value="ZA_GENERATED_HEADER=&quot;app/builder/ZigbeeCoor/ZigbeeCoor.h&quot;"/>
+									<listOptionValue builtIn="false" value="GENERATED_TOKEN_HEADER=&quot;app/builder/ZigbeeCoor/ZigbeeCoor_tokens.h&quot;"/>
+									<listOptionValue builtIn="false" value="ATTRIBUTE_STORAGE_CONFIGURATION=&quot;app/builder/ZigbeeCoor/ZigbeeCoor_endpoint_config.h&quot;"/>
+									<listOptionValue builtIn="false" value="BOARD_HEADER=&quot;app/builder/ZigbeeCoor/ZigbeeCoor_board.h&quot;"/>
+									<listOptionValue builtIn="false" value="NULL_BTL=1"/>
+									<listOptionValue builtIn="false" value="EFR32MG1B=1"/>
+									<listOptionValue builtIn="false" value="EFR32MG1B232F256GM32=1"/>
+									<listOptionValue builtIn="false" value="EMBER_AF_API_EMBER_TYPES=&quot;stack/include/ember-types.h&quot;"/>
+									<listOptionValue builtIn="false" value="CORTEXM3=1"/>
+									<listOptionValue builtIn="false" value="CONFIGURATION_HEADER=&quot;app/framework/util/config.h&quot;"/>
+									<listOptionValue builtIn="false" value="APPLICATION_TOKEN_HEADER=&quot;app/framework/util/tokens.h&quot;"/>
+									<listOptionValue builtIn="false" value="CORTEXM3_EFM32_MICRO=1"/>
+									<listOptionValue builtIn="false" value="CORTEXM3_EFR32_MICRO=1"/>
+									<listOptionValue builtIn="false" value="CORTEXM3_EFR32=1"/>
+									<listOptionValue builtIn="false" value="PHY_EFR32=1"/>
+								</option>
+								<inputType id="iar.arm.toolchain.assembler.inputType.asmFile.v5.4.0.1381525183" name="IAR Assembler input type for ARM (asm, s)" superClass="iar.arm.toolchain.assembler.inputType.asmFile.v5.4.0"/>
+							</tool>
+							<tool id="iar.arm.toolchain.linker.v5.4.0.195877071" name="IAR Linker for ARM" superClass="iar.arm.toolchain.linker.v5.4.0">
+								<option id="iar.arm.toolchain.linker.option.icfFile.v5.4.0.1129937309" name="Linker configuration file:" superClass="iar.arm.toolchain.linker.option.icfFile.v5.4.0" value="C:/SiliconLabs/EmberZNet5.7.2-GA/hal/micro/cortexm3/efm32/efr32/iar-cfg.icf" valueType="string"/>
+								<option id="iar.arm.toolchain.linker.option.generateAdditonalOutput.v5.5.2.1755083422" name="Generate additional output" superClass="iar.arm.toolchain.linker.option.generateAdditonalOutput.v5.5.2" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.linker.option.outFormat.v5.5.2.1498547365" name="Output format:" superClass="iar.arm.toolchain.linker.option.outFormat.v5.5.2" value="iar.arm.toolchain.linker.option.outFormat.intelExtended.v5.5.2" valueType="enumerated"/>
+								<option id="iar.arm.toolchain.linker.option.configSymbolDefs.v6.2.0.1693562608" name="Configuration file symbol definitions" superClass="iar.arm.toolchain.linker.option.configSymbolDefs.v6.2.0" valueType="stringList">
+									<listOptionValue builtIn="false" value="NULL_BTL=1"/>
+								</option>
+								<option id="iar.arm.toolchain.linker.option.treatAsRemarks.v5.4.0.559537045" name="Treat these as remarks:" superClass="iar.arm.toolchain.linker.option.treatAsRemarks.v5.4.0"/>
+								<option id="iar.arm.toolchain.linker.option.logFileInitializationDecisions.v5.4.0.747622972" name="Log initialization decisions" superClass="iar.arm.toolchain.linker.option.logFileInitializationDecisions.v5.4.0" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.linker.option.programEntry.v5.4.0.532765552" name="Entry symbol:" superClass="iar.arm.toolchain.linker.option.programEntry.v5.4.0" value="halEntryPoint" valueType="string"/>
+								<option id="iar.arm.toolchain.linker.option.logFileVeenerStatistics.v5.4.0.965859296" name="Log veener statistics" superClass="iar.arm.toolchain.linker.option.logFileVeenerStatistics.v5.4.0" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.linker.option.logFile.v6.2.2.900747696" name="Generate log file" superClass="iar.arm.toolchain.linker.option.logFile.v6.2.2" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.linker.option.logFileSectionSelections.v5.4.0.331976153" name="Log section selections" superClass="iar.arm.toolchain.linker.option.logFileSectionSelections.v5.4.0" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.linker.option.mapFile.v6.2.2.1466365694" name="Generate linker map file" superClass="iar.arm.toolchain.linker.option.mapFile.v6.2.2" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.linker.option.entryOverride.v6.2.3.191943080" name="Override default program entry" superClass="iar.arm.toolchain.linker.option.entryOverride.v6.2.3" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.linker.option.logFileModuleSelections.v5.4.0.1994301548" name="Log module selections" superClass="iar.arm.toolchain.linker.option.logFileModuleSelections.v5.4.0" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.linker.option.treatAsErrors.v5.4.0.1457635187" name="Treat these as errors:" superClass="iar.arm.toolchain.linker.option.treatAsErrors.v5.4.0"/>
+								<option id="iar.arm.toolchain.linker.option.keep.v5.4.0.754557215" name="Keep symbols:" superClass="iar.arm.toolchain.linker.option.keep.v5.4.0"/>
+								<option id="iar.arm.toolchain.linker.option.treatAsWarnings.v5.4.0.1636418027" name="Treat these as warnings:" superClass="iar.arm.toolchain.linker.option.treatAsWarnings.v5.4.0"/>
+								<option id="iar.arm.toolchain.linker.option.suppressThese.v5.4.0.702001205" name="Suppress these diagnostics (e.g. e106):" superClass="iar.arm.toolchain.linker.option.suppressThese.v5.4.0" valueType="stringList">
+									<listOptionValue builtIn="false" value="Lp012"/>
+									<listOptionValue builtIn="false" value="Lp012"/>
+									<listOptionValue builtIn="false" value="Lp012"/>
+									<listOptionValue builtIn="false" value="Lp012"/>
+									<listOptionValue builtIn="false" value="Lp012"/>
+								</option>
+								<option id="iar.arm.toolchain.linker.option.additionalLibraries.v5.5.0.1080358673" name="Additional libraries" superClass="iar.arm.toolchain.linker.option.additionalLibraries.v5.5.0" valueType="libs">
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;${StudioSdkPath}/build/cbke-163k1-stub-library-cortexm3-iar-efr32mg1b-efr32/cbke-163k1-stub-library.a&quot;"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;${StudioSdkPath}/build/gp-stub-library-cortexm3-iar-efr32mg1b-efr32/gp-stub-library.a&quot;"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;${StudioSdkPath}/build/zigbee-pro-stack-cortexm3-iar-efr32mg1b-efr32/zigbee-pro-stack.a&quot;"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;${StudioSdkPath}/build/cbke-library-dsa-verify-283k1-stub-cortexm3-iar-efr32mg1b-efr32/cbke-library-dsa-verify-283k1-stub.a&quot;"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;${StudioSdkPath}/build/rf4ce-stack-stub-library-cortexm3-iar-efr32mg1b-efr32/rf4ce-stack-stub-library.a&quot;"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;${StudioSdkPath}/build/sim-eeprom1-library-cortexm3-iar-efr32mg1b-efr32/sim-eeprom1-library.a&quot;"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;${StudioSdkPath}/build/hal-library-cortexm3-iar-efr32mg1b-efr32/hal-library.a&quot;"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;${StudioSdkPath}/build/cbke-library-dsa-verify-stub-cortexm3-iar-efr32mg1b-efr32/cbke-library-dsa-verify-stub.a&quot;"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;${StudioSdkPath}/build/cbke-library-dsa-sign-stub-cortexm3-iar-efr32mg1b-efr32/cbke-library-dsa-sign-stub.a&quot;"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;${StudioSdkPath}/build/packet-validate-library-cortexm3-iar-efr32mg1b-efr32/packet-validate-library.a&quot;"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;${StudioSdkPath}/build/security-library-link-keys-stub-cortexm3-iar-efr32mg1b-efr32/security-library-link-keys-stub.a&quot;"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;${StudioSdkPath}/build/cbke-stub-library-cortexm3-iar-efr32mg1b-efr32/cbke-stub-library.a&quot;"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;${StudioSdkPath}/build/alarm-stub-library-cortexm3-iar-efr32mg1b-efr32/alarm-stub-library.a&quot;"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;${StudioSdkPath}/build/end-device-bind-stub-library-cortexm3-iar-efr32mg1b-efr32/end-device-bind-stub-library.a&quot;"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;${StudioSdkPath}/build/debug-basic-library-cortexm3-iar-efr32mg1b-efr32/debug-basic-library.a&quot;"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;${StudioSdkPath}/build/cbke-283k1-stub-library-cortexm3-iar-efr32mg1b-efr32/cbke-283k1-stub-library.a&quot;"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;${StudioSdkPath}/build/install-code-library-stub-cortexm3-iar-efr32mg1b-efr32/install-code-library-stub.a&quot;"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;${StudioSdkPath}/build/binding-table-library-cortexm3-iar-efr32mg1b-efr32/binding-table-library.a&quot;"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;${StudioSdkPath}/build/enhanced-beacon-request-stub-library-cortexm3-iar-efr32mg1b-efr32/enhanced-beacon-request-stub-library.a&quot;"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;${StudioSdkPath}/build/debug-extended-stub-library-cortexm3-iar-efr32mg1b-efr32/debug-extended-stub-library.a&quot;"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;${StudioSdkPath}/build/security-library-core-cortexm3-iar-efr32mg1b-efr32/security-library-core.a&quot;"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;${StudioSdkPath}/build/multi-network-stub-library-cortexm3-iar-efr32mg1b-efr32/multi-network-stub-library.a&quot;"/>
+									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="&quot;${StudioSdkPath}/build/zll-stub-library-cortexm3-iar-efr32mg1b-efr32/zll-stub-library.a&quot;"/>
+								</option>
+								<inputType id="iar.arm.toolchain.linker.inputType.object.v5.4.0.111278723" name="IAR Linker Input Type for ARM (o)" superClass="iar.arm.toolchain.linker.inputType.object.v5.4.0">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+								</inputType>
+							</tool>
+							<tool id="iar.arm.toolchain.archive.v5.4.0.835970455" name="IAR Library Builder for ARM" superClass="iar.arm.toolchain.archive.v5.4.0"/>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="com.silabs.ide.si32.iar.release#com.silabs.ide.si32.iar:7.50.2.10312">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.silabs.ide.si32.iar.release#com.silabs.ide.si32.iar:7.50.2.10312" moduleId="org.eclipse.cdt.core.settings" name="IAR ARM - Release">
+				<macros>
+					<stringMacro name="StudioToolchainPath" type="VALUE_PATH_DIR" value="${StudioToolchainPathFromID:com.silabs.ide.si32.iar:7.50.2.10312}"/>
+					<stringMacro name="StudioSdkPath" type="VALUE_PATH_DIR" value="${StudioSdkPathFromID:com.silabs.ember.sdk.external.znet:5.7.2.-1733634126}"/>
+				</macros>
+				<externalSettings/>
+				<extensions>
+					<extension id="com.silabs.ide.debug.core.S37" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="com.silabs.ide.debug.core.BIN" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="com.silabs.ide.debug.core.HEX" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="com.iar.cdt.errorParser.com.iar.cdt.errorParser.ErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule buildConfig.stockConfigId="com.silabs.ide.si32.iar.release#com.silabs.ide.si32.iar:7.50.2.10312" cppBuildConfig.builtinIncludes="" cppBuildConfig.builtinLibraryFiles="" cppBuildConfig.builtinLibraryNames="" cppBuildConfig.builtinLibraryObjects="" cppBuildConfig.builtinLibraryPaths="" cppBuildConfig.builtinMacros="" moduleId="com.silabs.ide.project.core" projectCommon.buildArtifactType="EXE" projectCommon.referencedModules="[]" projectCommon.toolchainId="com.silabs.ide.si32.iar:7.50.2.10312"/>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="com.iar.cdt.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=com.iar.cdt.buildArtefactType.exe" cleanCommand="rm -rf" description="" id="com.silabs.ide.si32.iar.release#com.silabs.ide.si32.iar:7.50.2.10312" name="IAR ARM - Release" parent="iar.arm.toolchain.project.exe.configuration.debug.v5.4.0">
+					<folderInfo id="com.silabs.ide.si32.iar.release#com.silabs.ide.si32.iar:7.50.2.10312." name="/" resourcePath="">
+						<toolChain id="iar.arm.toolchain.project.exe.configuration.debug.toolchain.v5.4.0.1835982419" name="IAR Toolchain for ARM - 6.x" superClass="iar.arm.toolchain.project.exe.configuration.debug.toolchain.v5.4.0">
+							<option id="iar.arm.toolchain.option.cpuCore.v5.4.0.671084025" name="Processor core:" superClass="iar.arm.toolchain.option.cpuCore.v5.4.0" value="iar.arm.toolchain.option.cpuCore.Cortex-M4F.v5.5.0" valueType="enumerated"/>
+							<option id="iar.arm.toolchain.option.endianMode.v5.4.0.1028023254" name="Endian mode:" superClass="iar.arm.toolchain.option.endianMode.v5.4.0"/>
+							<option id="iar.arm.toolchain.option.bigEndianFormat.v5.4.0.1510581475" name="Big-endian format:" superClass="iar.arm.toolchain.option.bigEndianFormat.v5.4.0"/>
+							<option id="iar.arm.toolchain.option.printfFormatter.v5.4.0.141561214" name="Printf formatter:" superClass="iar.arm.toolchain.option.printfFormatter.v5.4.0"/>
+							<option id="iar.arm.toolchain.option.scanfFormatter.v5.4.0.1224057288" name="Scanf formatter:" superClass="iar.arm.toolchain.option.scanfFormatter.v5.4.0"/>
+							<option id="iar.arm.toolchain.option.bufferedOutput.v6.1.0.94088652" name="Buffered terminal output" superClass="iar.arm.toolchain.option.bufferedOutput.v6.1.0"/>
+							<option id="iar.arm.toolchain.option.mfc.v5.5.2.1072535651" name="Enable multi-file compilation" superClass="iar.arm.toolchain.option.mfc.v5.5.2"/>
+							<option id="iar.arm.toolchain.option.semihosted.v5.4.0.966007740" name="Include semihosting interface" superClass="iar.arm.toolchain.option.semihosted.v5.4.0" value="false" valueType="boolean"/>
+							<option id="iar.arm.toolchain.option.fpu.v5.4.0.1563679576" name="FPU:" superClass="iar.arm.toolchain.option.fpu.v5.4.0" value="iar.arm.toolchain.common.option.fpu.VFPv4.v5.5.0" valueType="enumerated"/>
+							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF;com.silabs.ide.debug.core.BIN;com.silabs.ide.debug.core.HEX;com.silabs.ide.debug.core.S37" id="iar.arm.toolchain.targetPlatform.v5.4.0.1008287874" isAbstract="false" name="IAR Target platform for ARM (ELF)" osList="win32,linux" superClass="iar.arm.toolchain.targetPlatform.v5.4.0"/>
+							<builder buildPath="${workspace_loc:/ZigbeeCoor}/IAR ARM - Release" id="cdt.managedbuild.target.gnu.builder.base.902713771" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="cdt.managedbuild.target.gnu.builder.base"/>
+							<tool id="iar.arm.toolchain.compiler.v5.4.1.1556701745" name="IAR C/C++ Compiler for ARM" superClass="iar.arm.toolchain.compiler.v5.4.1">
+								<option defaultValue="true" id="iar.arm.toolchain.compiler.option.debugInfo.v5.4.0.1564384400" name="Generate debug information" superClass="iar.arm.toolchain.compiler.option.debugInfo.v5.4.0" value="false" valueType="boolean"/>
+								<option defaultValue="iar.arm.toolchain.compiler.option.optLevel.none.v5.4.0" id="iar.arm.toolchain.compiler.option.optLevel.v5.4.0.1124214219" name="Optimization level:" superClass="iar.arm.toolchain.compiler.option.optLevel.v5.4.0" value="iar.arm.toolchain.compiler.option.optLevel.medium.v5.4.0" valueType="enumerated"/>
+								<option id="iar.arm.toolchain.compiler.option.optCSE.v5.4.0.1796288693" name="Disable common subexpression elimination" superClass="iar.arm.toolchain.compiler.option.optCSE.v5.4.0" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.compiler.option.optUnroll.v5.4.0.636497986" name="Disable loop unrolling" superClass="iar.arm.toolchain.compiler.option.optUnroll.v5.4.0" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.compiler.option.optInline.v5.4.0.1277402837" name="Disable function inlining" superClass="iar.arm.toolchain.compiler.option.optInline.v5.4.0" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.compiler.option.optCodeMotion.v5.4.0.1854457770" name="Disable code motion" superClass="iar.arm.toolchain.compiler.option.optCodeMotion.v5.4.0" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.compiler.option.optAliasAnalysis.v5.4.0.188166959" name="Disable type-based alias analysis" superClass="iar.arm.toolchain.compiler.option.optAliasAnalysis.v5.4.0" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.compiler.option.optStaticClustering.v5.4.0.1957445530" name="Disable static clustering" superClass="iar.arm.toolchain.compiler.option.optStaticClustering.v5.4.0" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.compiler.option.optScheduling.v5.4.0.603401730" name="Disable instruction scheduling" superClass="iar.arm.toolchain.compiler.option.optScheduling.v5.4.0" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.compiler.option.cpuMode.v5.4.0.2110526924" name="Processor mode:" superClass="iar.arm.toolchain.compiler.option.cpuMode.v5.4.0" value="iar.arm.toolchain.compiler.option.cpuMode.thumb.v5.4.0" valueType="enumerated"/>
+								<inputType id="iar.arm.toolchain.compiler.inputType.v5.4.1.514492294" name="IAR C/C++ Compiler Input Type" superClass="iar.arm.toolchain.compiler.inputType.v5.4.1"/>
+							</tool>
+							<tool id="iar.arm.toolchain.assembler.v5.4.0.1788581939" name="IAR Assembler for ARM" superClass="iar.arm.toolchain.assembler.v5.4.0">
+								<option defaultValue="true" id="iar.arm.toolchain.assembler.option.debugInfo.v5.4.0.151403343" name="Generate debug information" superClass="iar.arm.toolchain.assembler.option.debugInfo.v5.4.0" valueType="boolean"/>
+								<inputType id="iar.arm.toolchain.assembler.inputType.asmFile.v5.4.0.1384429826" name="IAR Assembler input type for ARM (asm, s)" superClass="iar.arm.toolchain.assembler.inputType.asmFile.v5.4.0"/>
+							</tool>
+							<tool id="iar.arm.toolchain.linker.v5.4.0.440633173" name="IAR Linker for ARM" superClass="iar.arm.toolchain.linker.v5.4.0">
+								<option id="iar.arm.toolchain.linker.option.icfFile.v5.4.0.1120486392" name="Linker configuration file:" superClass="iar.arm.toolchain.linker.option.icfFile.v5.4.0" value="${sdkLocation}/config/generic_cortex.icf" valueType="string"/>
+								<option id="iar.arm.toolchain.linker.option.generateAdditonalOutput.v5.5.2.1004423038" name="Generate additional output" superClass="iar.arm.toolchain.linker.option.generateAdditonalOutput.v5.5.2" value="true" valueType="boolean"/>
+								<option id="iar.arm.toolchain.linker.option.outFormat.v5.5.2.1859048619" name="Output format:" superClass="iar.arm.toolchain.linker.option.outFormat.v5.5.2" value="iar.arm.toolchain.linker.option.outFormat.intelExtended.v5.5.2" valueType="enumerated"/>
+								<inputType id="iar.arm.toolchain.linker.inputType.object.v5.4.0.290930822" name="IAR Linker Input Type for ARM (o)" superClass="iar.arm.toolchain.linker.inputType.object.v5.4.0">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+								</inputType>
+							</tool>
+							<tool id="iar.arm.toolchain.archive.v5.4.0.1288889597" name="IAR Library Builder for ARM" superClass="iar.arm.toolchain.archive.v5.4.0"/>
+						</toolChain>
+					</folderInfo>
+					<sourceEntries>
+						<entry excluding="efr32|simple-metering-client|time-server|zigbee-device-library.c|zigbee-device-common.c|zdo-cli.c|zcl-cli.c|util.c|time-util.c|service-discovery-soc.c|service-discovery-common.c|serial.c|security-cli.c|security-address-cache.c|random.c|process-global-message.c|process-cluster-message.c|print.c|print-formatter.c|plugin-cli.c|option-cli.c|network-cli.c|multi-network.c|message.c|mem-util.c|library.c|endian.c|ember-configuration.c|em_usbint.c|em_usbhal.c|em_usbdep.c|em_usbdch9.c|em_usbd.c|em_usbtimer.c|crypto-state.c|crc.c|core-cli.c|command-interpreter2.c|client-api.c|callbacks.c|descriptors.c|attribute-table.c|attribute-storage.c|attribute-size.c|af-trust-center.c|af-security-common.c|af-node.c|af-main-soc.c|af-main-common.c|af-event.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="com.silabs.ide.project.core" project.generation="15" projectCommon.importModeId="LINK_LIBRARIES" projectCommon.kitId="com.silabs.ide.kit.none" projectCommon.partId="com.silabs.mcu.si32.efr32.efr32mg1b.efr32mg1b232f256gm32" projectCommon.sdkId="com.silabs.ember.sdk.external.znet:5.7.2.-1733634126"/>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="ZigbeeCoor.com.silabs.ide.project.core.cdt.cdtMbsProjectType.981849585" name="SLS CDT Project" projectType="com.silabs.ide.project.core.cdt.cdtMbsProjectType"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="com.silabs.ide.si32.iar.debug#com.silabs.ide.si32.iar:7.50.2.10312;com.silabs.ide.si32.iar.debug#com.silabs.ide.si32.iar:7.50.2.10312.;iar.arm.toolchain.compiler.v5.4.1.757370182;iar.arm.toolchain.compiler.inputType.v5.4.1.1440939453">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.iar.cdt.arm.scanner.IAR_ARM_PerProjectProfile"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="com.silabs.ide.si32.iar.release#com.silabs.ide.si32.iar:7.50.2.10312;com.silabs.ide.si32.iar.release#com.silabs.ide.si32.iar:7.50.2.10312.;iar.arm.toolchain.compiler.v5.4.1.1556701745;iar.arm.toolchain.compiler.inputType.v5.4.1.514492294">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.iar.cdt.arm.scanner.IAR_ARM_PerProjectProfile"/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+</cproject>

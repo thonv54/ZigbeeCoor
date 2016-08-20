@@ -1,0 +1,7 @@
+/build/
+/.settings/
+/efr32/
+/emlib/
+/settings/
+/simple-metering-client/
+/time-server/
