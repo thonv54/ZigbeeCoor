@@ -143,7 +143,9 @@ void UartSendZclClusterCmdResponse(int16u NwkAddr,
                                    int16u ClusterId,
                                    int8u CmdPayloadLength,
                                    int8u *CmdPayload){
+                                       
     Zbs_ZclClusterCmdResponseStr ZclClusterCmdResponseData;
+    int16u StartIndexOfTxBuff;
     int16u val;
     
     ZclClusterCmdResponseData.Length = CmdPayloadLength + 9;
@@ -163,11 +165,24 @@ void UartSendZclClusterCmdResponse(int16u NwkAddr,
     
     ZclClusterCmdResponseData.CmdPayload = CmdPayload;
     
-    ZclClusterCmdResponseData.CheckXor = xorStr((unsigned char *) &ZclClusterCmdResponseData.CmdId,(ZclClusterCmdResponseData.Length -2));
+    ZclClusterCmdResponseData.CheckXor = 
+        xorStr((unsigned char *) &ZclClusterCmdResponseData.CmdId,7) ^
+        xorStr(ZclClusterCmdResponseData.CmdPayload,ZclClusterCmdResponseData.CmdPayloadLength);
+
+                                
+    
     ZclClusterCmdResponseData.TimeOut = NormalTimeOut;
     
-    memcpy(&UartTxCommandBuff [GetLastTxUartCmd()], &ZclClusterCmdResponseData,
-            sizeof(ZclClusterCmdResponseData));    
+    StartIndexOfTxBuff = GetLastTxUartCmd();
+    memcpy(&UartTxCommandBuff [StartIndexOfTxBuff], 
+            &ZclClusterCmdResponseData,
+            9);
+    memcpy(&UartTxCommandBuff [StartIndexOfTxBuff + 9]  ,
+            ZclClusterCmdResponseData.CmdPayload,
+            ZclClusterCmdResponseData.CmdPayloadLength);
+    memcpy(&UartTxCommandBuff [StartIndexOfTxBuff+ 9+ ZclClusterCmdResponseData.CmdPayloadLength]  ,
+            &ZclClusterCmdResponseData.CheckXor,
+            2);
 }
 /**
  * @func   NwkFormEventFunction
@@ -185,6 +200,7 @@ void UartSendZclGlobalCmdResponse(int16u NwkAddr,
                                    int8u CmdPayloadLength,
                                    int8u *CmdPayload){
     Zbs_ZclGlobalCmdResponseStr ZclGlobalCmdResponseData;
+    int16u StartIndexOfTxBuff;
     int16u val;
     
     ZclGlobalCmdResponseData.Length = CmdPayloadLength + 10;
@@ -206,11 +222,22 @@ void UartSendZclGlobalCmdResponse(int16u NwkAddr,
     
     ZclGlobalCmdResponseData.CmdPayload = CmdPayload;
     
-    ZclGlobalCmdResponseData.CheckXor = xorStr((unsigned char *) &ZclGlobalCmdResponseData.CmdId,(ZclGlobalCmdResponseData.Length -2));
+    ZclGlobalCmdResponseData.CheckXor = 
+        xorStr((unsigned char *) &ZclGlobalCmdResponseData.CmdId,8) ^
+        xorStr(ZclGlobalCmdResponseData.CmdPayload, ZclGlobalCmdResponseData.CmdPayloadLength);
+    
     ZclGlobalCmdResponseData.TimeOut = NormalTimeOut;
     
-    memcpy(&UartTxCommandBuff [GetLastTxUartCmd()], &ZclGlobalCmdResponseData,
-            sizeof(ZclGlobalCmdResponseData));    
+    StartIndexOfTxBuff = GetLastTxUartCmd();
+    memcpy(&UartTxCommandBuff [StartIndexOfTxBuff], 
+            &ZclGlobalCmdResponseData,
+            10);
+    memcpy(&UartTxCommandBuff [StartIndexOfTxBuff + 10]  ,
+            ZclGlobalCmdResponseData.CmdPayload,
+            ZclGlobalCmdResponseData.CmdPayloadLength);
+    memcpy(&UartTxCommandBuff [StartIndexOfTxBuff+ 10+ ZclGlobalCmdResponseData.CmdPayloadLength]  ,
+            &ZclGlobalCmdResponseData.CheckXor,
+            2);
 }
 
 /**
@@ -227,6 +254,7 @@ void UartSendZdoCmdResponse(int16u NwkAddr,
                             int8u CmdPayloadLength,
                             int8u *CmdPayload){
     Zbs_ZdoCmdResponseStr ZdoCmdResponseData;
+    int16u StartIndexOfTxBuff;
     int16u val;
     
     ZdoCmdResponseData.Length = CmdPayloadLength + 8;
@@ -244,11 +272,22 @@ void UartSendZdoCmdResponse(int16u NwkAddr,
     
     ZdoCmdResponseData.CmdPayload = CmdPayload;
     
-    ZdoCmdResponseData.CheckXor = xorStr((unsigned char *) &ZdoCmdResponseData.CmdId,(ZdoCmdResponseData.Length -2));
+    ZdoCmdResponseData.CheckXor = 
+        xorStr((unsigned char *) &ZdoCmdResponseData.CmdId,6) ^
+        xorStr(ZdoCmdResponseData.CmdPayload,ZdoCmdResponseData.CmdPayloadLength);
+
     ZdoCmdResponseData.TimeOut = NormalTimeOut;
     
-    memcpy(&UartTxCommandBuff [GetLastTxUartCmd()], &ZdoCmdResponseData,
-            sizeof(ZdoCmdResponseData));    
+    StartIndexOfTxBuff = GetLastTxUartCmd();
+    memcpy(&UartTxCommandBuff [StartIndexOfTxBuff], 
+            &ZdoCmdResponseData,
+            8);
+    memcpy(&UartTxCommandBuff [StartIndexOfTxBuff + 8]  ,
+            ZdoCmdResponseData.CmdPayload,
+            ZdoCmdResponseData.CmdPayloadLength);  
+    memcpy(&UartTxCommandBuff [StartIndexOfTxBuff+ 8+ ZdoCmdResponseData.CmdPayloadLength]  ,
+            &ZdoCmdResponseData.CheckXor,
+            2);
 }
 
 //---------------------------------//----------------------------------//------------------------------//

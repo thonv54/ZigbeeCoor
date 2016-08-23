@@ -298,69 +298,144 @@ int8u HC_ZclGlobalCmdRequest_Task(int8u *data){
 
 int8u HC_ZdoCmdRequest_Task(int8u *data){
     int8u UartCmdStatus = UartCmdNormal;
-    int16u NwkAddr = MERGE16(data[0],data[1]);
+    int16u ApsNwkAddr = MERGE16(data[0],data[1]);
     int16u ZdoCmd = MERGE16 (data[2],data[3]);
-    int8u CmdPayloadLength = data[6];
+//    int8u CmdPayloadLength = data[6];
     int8u* CmdPayload = &data[7];
-    switch(ZdoCmd){
-        case NETWORK_ADDRESS_REQUEST:
+    
+    if(ZdoCmd == NETWORK_ADDRESS_REQUEST){
+//        int8u seqNumber = CmdPayload[0];
         
-        break;
-        case IEEE_ADDRESS_REQUEST:
-        break;
-        case NODE_DESCRIPTOR_REQUEST:
-        break;
-        case POWER_DESCRIPTOR_REQUEST:
-        break;
-        case SIMPLE_DESCRIPTOR_REQUEST:
-        break;
-        case ACTIVE_ENDPOINTS_REQUEST:
-        break;
-        case MATCH_DESCRIPTORS_REQUEST:
-        break;
-        case DISCOVERY_CACHE_REQUEST:
-        break;
-        case END_DEVICE_ANNOUNCE:
-        break;
-        case SYSTEM_SERVER_DISCOVERY_REQUEST:
-        break;
-        case PARENT_ANNOUNCE:
-        break;
-        case FIND_NODE_CACHE_REQUEST:
-        break;
-        case END_DEVICE_BIND_REQUEST:
-        break;
-        case BIND_REQUEST:
-        break;
-        case UNBIND_REQUEST:
-        break;
-        case LQI_TABLE_REQUEST:
-        break;
-        case ROUTING_TABLE_REQUEST:
-        break;
-        case BINDING_TABLE_REQUEST:
-        break;
-        case LEAVE_REQUEST:
-        break;
-        case PERMIT_JOINING_REQUEST:
-        break;
-        case NWK_UPDATE_REQUEST:
-        break;
-        case COMPLEX_DESCRIPTOR_REQUEST:
-        break;
-        case USER_DESCRIPTOR_REQUEST:
-        break;
-        case USER_DESCRIPTOR_SET:
-        break;
-        case NETWORK_DISCOVERY_REQUEST:
-        break;
-        case DIRECT_JOIN_REQUEST:
-        break;
-        default:
-        break;
+        int8u LongAddr[8];
+        memcpy(LongAddr,(int8u*)&CmdPayload[1],sizeof(LongAddr));
+        int8u ReportKids = CmdPayload[9];
+        int8u ChildStartIndex = CmdPayload[10];
+        emberNetworkAddressRequest(LongAddr,
+                                    ReportKids,         // report kids?
+                                    ChildStartIndex);            // child start index
+    }
+    else if(ZdoCmd == IEEE_ADDRESS_REQUEST){
+//        int8u seqNumber = CmdPayload[0];
+        
+        int16u NwkAddr = MERGE16(CmdPayload[1],CmdPayload[2]);
+        int8u ReportKids = CmdPayload[3];
+        int8u ChildStartIndex = CmdPayload[4];
+        emberIeeeAddressRequest(NwkAddr,
+                                ReportKids,
+                                ChildStartIndex,
+                                EMBER_AF_DEFAULT_APS_OPTIONS);
+    }
+    else if(ZdoCmd == NODE_DESCRIPTOR_REQUEST){
+//        int8u seqNumber = CmdPayload[0];   
+        
+        int16u NwkAddr = MERGE16(CmdPayload[1],CmdPayload[2]);
+        emberNodeDescriptorRequest (NwkAddr,
+                                    EMBER_AF_DEFAULT_APS_OPTIONS);
         
     }
-                           
+    
+    else if(ZdoCmd == POWER_DESCRIPTOR_REQUEST){
+    }
+    else if (ZdoCmd == SIMPLE_DESCRIPTOR_REQUEST){
+//        int8u seqNumber = CmdPayload[0];
+        
+        int16u NwkAddr = MERGE16(CmdPayload[1],CmdPayload[2]);
+        int8u Endpoint = CmdPayload[3];
+
+        emberSimpleDescriptorRequest(NwkAddr,
+                                         Endpoint,
+                                         EMBER_AF_DEFAULT_APS_OPTIONS);
+    }
+    else if(ZdoCmd == ACTIVE_ENDPOINTS_REQUEST){
+//        int8u seqNumber = CmdPayload[0];   
+        
+        int16u NwkAddr = MERGE16(CmdPayload[1],CmdPayload[2]);
+        emberActiveEndpointsRequest (NwkAddr,
+                                    EMBER_AF_DEFAULT_APS_OPTIONS);
+    }
+    else if(ZdoCmd == MATCH_DESCRIPTORS_REQUEST){
+    }
+    else if(ZdoCmd == DISCOVERY_CACHE_REQUEST){
+    }
+    else if(ZdoCmd == END_DEVICE_ANNOUNCE){
+    }
+    else if(ZdoCmd == SYSTEM_SERVER_DISCOVERY_REQUEST){
+    }
+    else if(ZdoCmd == PARENT_ANNOUNCE){
+    }
+    else if(ZdoCmd == FIND_NODE_CACHE_REQUEST){
+    }
+    else if(ZdoCmd == END_DEVICE_BIND_REQUEST){
+    }
+    else if (ZdoCmd == BIND_REQUEST){
+  /// Request:  <transaction sequence number: 1>
+  ///           <source EUI64:8> <source endpoint:1> 
+  ///           <cluster ID:2> <destination address:3 or 10>  
+        
+//        int8u seqNumber = CmdPayload[0];  
+        
+        int8u SourceEui[8];
+        memcpy(SourceEui, (int8u*)&CmdPayload[1],sizeof(SourceEui));
+        int8u SourceEndpoint = CmdPayload[9];
+        int8u ClusterId = MERGE16(CmdPayload[10],CmdPayload[11]);
+        int8u DestEui[8];
+        memcpy(DestEui, (int8u*)&CmdPayload[12],sizeof(DestEui));
+        int8u DestEndpoint = CmdPayload[20];
+        
+        emberBindRequest(ApsNwkAddr,          // who gets the bind req
+                SourceEui,       // source eui IN the binding
+                SourceEndpoint,
+                ClusterId,       
+                UNICAST_BINDING, // binding type
+                DestEui,         // destination eui IN the binding
+                0,               // groupId for new binding
+                DestEndpoint,
+                EMBER_AF_DEFAULT_APS_OPTIONS);
+    }
+    else if (ZdoCmd == UNBIND_REQUEST){
+//        int8u seqNumber = CmdPayload[0];  
+        
+        int8u SourceEui[8];
+        memcpy(SourceEui, (int8u*)&CmdPayload[1],sizeof(SourceEui));
+        int8u SourceEndpoint = CmdPayload[9];
+        int8u ClusterId = MERGE16(CmdPayload[10],CmdPayload[11]);
+        int8u DestEui[8];
+        memcpy(DestEui, (int8u*)&CmdPayload[12],sizeof(DestEui));
+        int8u DestEndpoint = CmdPayload[20];
+        
+        emberUnbindRequest(ApsNwkAddr,          // who gets the bind req
+                SourceEui,       // source eui IN the binding
+                SourceEndpoint,
+                ClusterId,       
+                UNICAST_BINDING, // binding type
+                DestEui,         // destination eui IN the binding
+                0,               // groupId for new binding
+                DestEndpoint,
+                EMBER_AF_DEFAULT_APS_OPTIONS);
+    }
+    else if (ZdoCmd == LQI_TABLE_REQUEST){
+    }
+    else if(ZdoCmd == ROUTING_TABLE_REQUEST){
+    }
+    else if (ZdoCmd == BINDING_TABLE_REQUEST){
+    }
+    else if (ZdoCmd == LEAVE_REQUEST){
+    }
+    else if (ZdoCmd == PERMIT_JOINING_REQUEST){
+    }
+    else if (ZdoCmd == NWK_UPDATE_REQUEST){
+    }
+    else if (ZdoCmd == COMPLEX_DESCRIPTOR_REQUEST){
+    }
+    else if (ZdoCmd == USER_DESCRIPTOR_REQUEST){
+    }
+    else if (ZdoCmd == USER_DESCRIPTOR_SET){
+    }
+    else if (ZdoCmd == NETWORK_DISCOVERY_REQUEST){
+    }
+    else if (ZdoCmd == DIRECT_JOIN_REQUEST){
+    }
+                        
     return UartCmdStatus;
 }
 

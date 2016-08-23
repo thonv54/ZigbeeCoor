@@ -81,6 +81,10 @@ boolean emberAfPreZDOMessageReceivedCallback(EmberNodeId emberNodeId,
         UartSendZdoCmdResponse(emberNodeId,SIMPLE_DESCRIPTOR_RESPONSE,Length,message);
         return TRUE;
     }
+    else if (apsFrame->clusterId == NETWORK_ADDRESS_RESPONSE) {
+        UartSendZdoCmdResponse(emberNodeId,NETWORK_ADDRESS_RESPONSE,Length,message);
+        return TRUE;
+    }
     else if (apsFrame->clusterId == IEEE_ADDRESS_RESPONSE) {
         UartSendZdoCmdResponse(emberNodeId,IEEE_ADDRESS_RESPONSE,Length,message);
         return TRUE;
@@ -116,6 +120,40 @@ boolean emberAfPreZDOMessageReceivedCallback(EmberNodeId emberNodeId,
 
     return false;
 }
+
+
+/** @brief Pre Command Received
+ *
+ * This callback is the second in the Application Framework's message processing
+ * chain. At this point in the processing of incoming over-the-air messages, the
+ * application has determined that the incoming message is a ZCL command. It
+ * parses enough of the message to populate an EmberAfClusterCommand struct. The
+ * Application Framework defines this struct value in a local scope to the
+ * command processing but also makes it available through a global pointer
+ * called emberAfCurrentCommand, in app/framework/util/util.c. When command
+ * processing is complete, this pointer is cleared.
+ *
+ * @param cmd   Ver.: always
+ */
+bool emberAfPreCommandReceivedCallback(EmberAfClusterCommand* cmd)
+{
+    int16u NwkAddr = cmd-> source;
+    int8u Endpoint = cmd-> apsFrame ->sourceEndpoint;
+    int16u ClusterId  = cmd ->apsFrame -> clusterId;
+    if(cmd -> clusterSpecific == ZCL_CLUSTER_SPECIFIC_COMMAND){
+        int8u CmdPayloadLength = cmd -> bufLen - 2;
+        int8u *CmdPayload = (int8u*)&(cmd -> buffer[2]);
+        UartSendZclClusterCmdResponse(NwkAddr,Endpoint,ClusterId,CmdPayloadLength,CmdPayload);
+    }
+    else if (cmd -> clusterSpecific == ZCL_GLOBAL_COMMAND){
+        int8u CmdPayloadLength = cmd -> bufLen - 3;
+        int8u GeneralCmd = cmd->buffer[2];
+        int8u *CmdPayload = (int8u*)&(cmd ->buffer[3]);
+        UartSendZclGlobalCmdResponse(NwkAddr,Endpoint,ClusterId,GeneralCmd,CmdPayloadLength,CmdPayload);
+    }
+    return false;
+}
+
 
 
 /**

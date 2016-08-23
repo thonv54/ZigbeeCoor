@@ -1894,23 +1894,7 @@ bool emberAfPreCliSendCallback(EmberApsFrame* apsFrame,
   return false;
 }
 
-/** @brief Pre Command Received
- *
- * This callback is the second in the Application Framework's message processing
- * chain. At this point in the processing of incoming over-the-air messages, the
- * application has determined that the incoming message is a ZCL command. It
- * parses enough of the message to populate an EmberAfClusterCommand struct. The
- * Application Framework defines this struct value in a local scope to the
- * command processing but also makes it available through a global pointer
- * called emberAfCurrentCommand, in app/framework/util/util.c. When command
- * processing is complete, this pointer is cleared.
- *
- * @param cmd   Ver.: always
- */
-bool emberAfPreCommandReceivedCallback(EmberAfClusterCommand* cmd)
-{
-  return false;
-}
+
 
 /** @brief Pre Message Received
  *
