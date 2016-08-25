@@ -19,6 +19,7 @@ typedef enum{
     Startup = 0,
     Idle     = 1,
 }RunningStep_enum;
+
 unsigned char RunningStep = Startup;
 
 
@@ -33,10 +34,12 @@ unsigned char RunningStep = Startup;
 // Event control struct declaration
 EmberEventControl UartSendEventControl;
 EmberEventControl UartGetEventControl;
+EmberEventControl StartupFormNwkEventControl;
 
 // Event function forward declaration
 void UartSendEventFunction(void);
 void UartGetEventFunction(void);
+void StartupFormNwkEventFunction(void);
 
 // Event function stub
 void UartSendEventFunction(void) { 
@@ -46,6 +49,39 @@ void UartSendEventFunction(void) {
 void UartGetEventFunction(void) { 
     emberEventControlSetActive(UartGetEventControl);
     UartGetCommand();
+}
+
+void StartupFormNwkEventFunction(void){
+
+    EmberNodeType CurrentNodeType;
+    EmberNetworkStatus NetworkStatus;
+    //Tao mang
+    NetworkStatus = emberAfNetworkState();
+    emberAfGetNodeType(&CurrentNodeType);
+    switch(NetworkStatus){
+        case EMBER_NO_NETWORK:
+            if(emberFormAndJoinIsScanning() == 0){
+                emberAfFindUnusedPanIdAndForm();
+            }
+            emberEventControlSetActive(StartupFormNwkEventControl);
+            
+        break;
+        case EMBER_JOINED_NETWORK:
+            if(CurrentNodeType != EMBER_COORDINATOR){
+                emberLeaveNetwork();
+                emberEventControlSetActive(StartupFormNwkEventControl);
+            }
+            else{
+                RunningStep = Idle;
+                emberEventControlSetInactive(StartupFormNwkEventControl);
+                emberEventControlSetActive(UartSendEventControl);
+                emberEventControlSetActive(UartGetEventControl);
+                
+            }
+        break;
+            default:     
+        break;  
+    }
 }
 
 
@@ -72,65 +108,9 @@ void UartGetEventFunction(void) {
 void emberAfMainInitCallback(void)
 {
 	emberSerialInit(HC_SERIAL, HC_BAUD_RATE, PARITY_NONE, 1);
+  emberEventControlSetDelayMS(StartupFormNwkEventControl,1000);
 }
 
-/** @brief Main Tick
- *
- * Whenever main application tick is called, this callback will be called at the
- * end of the main tick execution.
- *
- */
-void CoorProgram(void){
-    
-   
-    switch (RunningStep){
-        case Startup:
-            EmberStatus status;
-            EmberNodeType CurrentNodeType;
-            EmberNetworkStatus NetworkStatus;
-            //Tao mang
-            NetworkStatus = emberAfNetworkState();
-            emberAfGetNodeType(&CurrentNodeType);
-            switch(NetworkStatus){
-                case EMBER_NO_NETWORK:
-                    if(emberFormAndJoinIsScanning() == 0){
-                        status = emberAfFindUnusedPanIdAndForm();
-                    }
-                break;
-                case EMBER_JOINED_NETWORK:
-                    if(CurrentNodeType != EMBER_COORDINATOR){
-                        status = emberLeaveNetwork();
-                    }
-                    else{
-                        RunningStep = Idle;
-                        emberEventControlSetActive(UartSendEventControl);
-                        emberEventControlSetActive(UartGetEventControl);
-                        
-                    }
-                break;
-                    default:
-                    
-                break;  
-            }
-        break;
-        
-        case Idle:
-            //      Idle Wait event
-
-        break;
-        default:
-        break;
-        
-    }
-}
-
-void emberAfMainTickCallback(void)
-{
-    CoorProgram();
-//    TaskRun();
-//    UartGetCommand();
-//    UartSendCommand();
-}
 
 
 

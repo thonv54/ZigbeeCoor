@@ -2443,3 +2443,14 @@ bool emberAfReadAttributesResponseCallback(EmberAfClusterId clusterId,
 {
    return false;
 }
+/** @brief Main Tick
+ *
+ * Whenever main application tick is called, this callback will be called at the
+ * end of the main tick execution.
+ *
+ */
+
+void emberAfMainTickCallback(void)
+{
+    
+}

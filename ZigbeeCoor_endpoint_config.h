@@ -139,6 +139,8 @@ PGM EmberAfGenericClusterFunction emberAfFuncArraySimpleMeteringClusterClient[] 
   extern EmberEventControl UartSendEventControl; \
   extern void UartSendEventFunction(void); \
   extern EmberEventControl UartGetEventControl; \
+  extern void StartupFormNwkEventFunction(void); \
+  extern EmberEventControl StartupFormNwkEventControl; \
   extern void UartGetEventFunction(void); \
   extern EmberEventControl NwkFormEventControl; \
   extern void NwkFormEventFunction(void); \
@@ -163,6 +165,7 @@ PGM EmberAfGenericClusterFunction emberAfFuncArraySimpleMeteringClusterClient[] 
   { &emberAfPluginNetworkFindTickEventControl, emberAfPluginNetworkFindTickEventHandler }, \
   { &UartSendEventControl, UartSendEventFunction }, \
   { &UartGetEventControl, UartGetEventFunction }, \
+  { &StartupFormNwkEventControl, StartupFormNwkEventFunction }, \
   { &NwkFormEventControl, NwkFormEventFunction }, \
 
 

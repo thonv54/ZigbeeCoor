@@ -180,7 +180,7 @@ void UartSendZclClusterCmdResponse(int16u NwkAddr,
     memcpy(&UartTxCommandBuff [StartIndexOfTxBuff + 9]  ,
             ZclClusterCmdResponseData.CmdPayload,
             ZclClusterCmdResponseData.CmdPayloadLength);
-    memcpy(&UartTxCommandBuff [StartIndexOfTxBuff+ 9+ ZclClusterCmdResponseData.CmdPayloadLength]  ,
+    memcpy(&UartTxCommandBuff [StartIndexOfTxBuff+ 9 + ZclClusterCmdResponseData.CmdPayloadLength]  ,
             &ZclClusterCmdResponseData.CheckXor,
             2);
 }
