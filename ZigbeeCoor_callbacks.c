@@ -8,10 +8,12 @@
 #include "app/framework/include/af.h"
 #include "stack/include/ember-types.h"
 #include "app/util/common/form-and-join.h"
+#include "app/framework/util/af-main.h"
 #include "Uart_Transmitter.h"
 #include "Uart_Receiver.h"
 #include "Uart_CmdExec.h"
 #include "TaskUtility.h"
+#include "ZigbeeEvent.h"
 
 
 
@@ -21,8 +23,6 @@ typedef enum{
 }RunningStep_enum;
 
 unsigned char RunningStep = Startup;
-
-
 
 
 //---------------------------------------------------------------------------//
@@ -64,7 +64,7 @@ void StartupFormNwkEventFunction(void){
                 emberAfFindUnusedPanIdAndForm();
             }
             emberEventControlSetActive(StartupFormNwkEventControl);
-            
+
         break;
         case EMBER_JOINED_NETWORK:
             if(CurrentNodeType != EMBER_COORDINATOR){
@@ -76,7 +76,11 @@ void StartupFormNwkEventFunction(void){
                 emberEventControlSetInactive(StartupFormNwkEventControl);
                 emberEventControlSetActive(UartSendEventControl);
                 emberEventControlSetActive(UartGetEventControl);
-                
+#ifdef TestRFCode
+                (void) emAfPermitJoin(0xFF,1);
+                emberEventControlSetActive(NwkSendTestRfEventControl);
+
+#endif
             }
         break;
             default:     

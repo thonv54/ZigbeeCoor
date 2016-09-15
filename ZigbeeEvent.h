@@ -27,7 +27,7 @@
 /*                     EXPORTED TYPES and DEFINITIONS                         */
 /******************************************************************************/
 #define Debug
-
+//#define TestRfCode
 
 
 
@@ -63,6 +63,10 @@ extern NwkFormEventData_str NwkFormEventData;
 /******************************************************************************/
 
 extern EmberEventControl NwkFormEventControl;
+
+
+extern EmberEventControl NwkSendTestRfEventControl; // Event control struct declaration
+
 
 /******************************************************************************/
 /*                            END OF FILE                                     */

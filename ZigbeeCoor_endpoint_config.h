@@ -144,6 +144,8 @@ PGM EmberAfGenericClusterFunction emberAfFuncArraySimpleMeteringClusterClient[] 
   extern void UartGetEventFunction(void); \
   extern EmberEventControl NwkFormEventControl; \
   extern void NwkFormEventFunction(void); \
+  extern EmberEventControl NwkSendTestRfEventControl; \
+  extern void NwkSendTestRfEventFunction(void); \
   static void clusterTickWrapper(EmberEventControl *control, EmberAfTickFunction callback, uint8_t endpoint) \
   { \
     emberAfPushEndpointNetworkIndex(endpoint); \
@@ -167,6 +169,7 @@ PGM EmberAfGenericClusterFunction emberAfFuncArraySimpleMeteringClusterClient[] 
   { &UartGetEventControl, UartGetEventFunction }, \
   { &StartupFormNwkEventControl, StartupFormNwkEventFunction }, \
   { &NwkFormEventControl, NwkFormEventFunction }, \
+  { &NwkSendTestRfEventControl, NwkSendTestRfEventFunction }, \
 
 
 #define EMBER_AF_GENERATED_EVENT_STRINGS   \
@@ -203,12 +206,10 @@ PGM EmberAfGenericClusterFunction emberAfFuncArraySimpleMeteringClusterClient[] 
 
 
 #define EMBER_AF_GENERATED_PLUGIN_NCP_INIT_FUNCTION_DECLARATIONS \
-  void emberAfPluginAddressTableNcpInitCallback(bool memoryAllocation); \
   void emberAfPluginConcentratorNcpInitCallback(bool memoryAllocation); \
 
 
 #define EMBER_AF_GENERATED_PLUGIN_NCP_INIT_FUNCTION_CALLS \
-  emberAfPluginAddressTableNcpInitCallback(memoryAllocation); \
   emberAfPluginConcentratorNcpInitCallback(memoryAllocation); \
 
 
@@ -240,14 +241,10 @@ PGM EmberAfGenericClusterFunction emberAfFuncArraySimpleMeteringClusterClient[] 
                     messageContents); \
 
 #define EMBER_AF_GENERATED_PLUGIN_TICK_FUNCTION_DECLARATIONS \
-  void emberAfPluginHeartbeatTickCallback(void); \
-  void emberAfPluginIdleSleepTickCallback(void); \
   void emberAfPluginScanDispatchTickCallback(void); \
 
 
 #define EMBER_AF_GENERATED_PLUGIN_TICK_FUNCTION_CALLS \
-  emberAfPluginHeartbeatTickCallback(); \
-  emberAfPluginIdleSleepTickCallback(); \
   emberAfPluginScanDispatchTickCallback(); \
 
 // Generated data for the command discovery

@@ -1185,23 +1185,6 @@ EmberCommandEntry emberCommandTablePluginSimpleMeteringClientCommands[] = {
   emberCommandEntryTerminator()
 };
 
-PGM_P PGM emberCommandTablePluginIdleSleepAwakeWhenNotJoinedCommandArguments[] = {
-  "The value indicating whether the device should stay awake when not joi ...",
-  NULL
-};
-
-PGM_P PGM emberCommandTablePluginIdleSleepForceAwakeCommandArguments[] = {
-  "The value indicating whether the device should stay awake.",
-  NULL
-};
-
-EmberCommandEntry emberCommandTablePluginIdleSleepCommands[] = {
-  emberCommandEntryActionWithDetails("awake-when-not-joined", emberAfPluginIdleSleepAwakeWhenNotJoinedCommand, "u", "Sets whether the device stays awake when not joined to a ZigBee networ ...", emberCommandTablePluginIdleSleepAwakeWhenNotJoinedCommandArguments),
-  emberCommandEntryActionWithDetails("force-awake", emberAfPluginIdleSleepStayAwakeCommand, "u", "Sets whether the device is forced to stay awake.", emberCommandTablePluginIdleSleepForceAwakeCommandArguments),
-  emberCommandEntryActionWithDetails("status", emberAfPluginIdleSleepStatusCommand, "", "Display the status of the sleeping behavior.", NULL),
-  emberCommandEntryTerminator()
-};
-
 EmberCommandEntry emberCommandTablePluginIdentifyCommands[] = {
   emberCommandEntryActionWithDetails("print", emAfPluginIdentifyCliPrint, "", "Print which endpoints are reporting.", NULL),
   emberCommandEntryTerminator()
@@ -1249,44 +1232,12 @@ EmberCommandEntry emberCommandTablePluginConcentratorCommands[] = {
   emberCommandEntryTerminator()
 };
 
-PGM_P PGM emberCommandTablePluginAddressTableAddCommandArguments[] = {
-  "Entry to be added.",
-  NULL
-};
-
-PGM_P PGM emberCommandTablePluginAddressTableLookupCommandArguments[] = {
-  "Entry to be looked up.",
-  NULL
-};
-
-PGM_P PGM emberCommandTablePluginAddressTableRemoveCommandArguments[] = {
-  "Entry to be removed.",
-  NULL
-};
-
-PGM_P PGM emberCommandTablePluginAddressTableSetCommandArguments[] = {
-  "index",
-  "eui64",
-  "node id",
-  NULL
-};
-
-EmberCommandEntry emberCommandTablePluginAddressTableCommands[] = {
-  emberCommandEntryActionWithDetails("add", emberAfPluginAddressTableAddCommand, "b", "Add an entry to the address table.", emberCommandTablePluginAddressTableAddCommandArguments),
-  emberCommandEntryActionWithDetails("lookup", emberAfPluginAddressTableLookupCommand, "b", "Lookup an entry in the address table.", emberCommandTablePluginAddressTableLookupCommandArguments),
-  emberCommandEntryActionWithDetails("print", emberAfPluginAddressTablePrintCommand, "", "Prints the address table.", NULL),
-  emberCommandEntryActionWithDetails("remove", emberAfPluginAddressTableRemoveCommand, "b", "Remove an entry from the address table.", emberCommandTablePluginAddressTableRemoveCommandArguments),
-  emberCommandEntryActionWithDetails("set", emberAfPluginAddressTableSetCommand, "ubv", "Set an entry in the address table according to the arguments specified", emberCommandTablePluginAddressTableSetCommandArguments),
-  emberCommandEntryTerminator()
-};
 
 EmberCommandEntry emberCommandTablePluginCommands[] = {
-  emberCommandEntrySubMenu("address-table", emberCommandTablePluginAddressTableCommands, ""),
   emberCommandEntrySubMenu("concentrator", emberCommandTablePluginConcentratorCommands, ""),
   emberCommandEntrySubMenu("counter", emberCommandTablePluginCounterCommands, ""),
   emberCommandEntrySubMenu("counters", emberCommandTablePluginCountersCommands, ""),
   emberCommandEntrySubMenu("identify", emberCommandTablePluginIdentifyCommands, ""),
-  emberCommandEntrySubMenu("idle-sleep", emberCommandTablePluginIdleSleepCommands, ""),
   emberCommandEntrySubMenu("simple-metering-client", emberCommandTablePluginSimpleMeteringClientCommands, ""),
   emberCommandEntryTerminator()
 };

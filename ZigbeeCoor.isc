@@ -1,12 +1,12 @@
 #ISD App Configuration:3.1
-# ISD version: 3.3.1985
+# ISD version: 1.0.0.201606231656-435
 #  Identified of a stack descriptor used for this configuration. This should not
 #  be changed manually, unless you really know what you are doing.
 ConfiguratorID:auto-EM35X
 
 #  Output directory which is used as a root for all generated files. The actual
 #  files relative to that directory are defined by individual file name.
-GenerationDirectory:PATH(ABSOLUTE):C:\SiliconLabs\EmberZNet5.7.2-GA\.
+GenerationDirectory:PATH(ABSOLUTE):C:\SiliconLabs\EmberZNet5.7.2-GA
 
 #  Unique identifier for this device. This string should be in a form of a C
 #  identifier, as it will be used in both generated variable, macros, as well as
@@ -384,6 +384,9 @@ FragmentationMaxSize:255
 
 #  Size of the table for source routing.
 SourceRouteTableSize:7
+
+#  Default response policy.
+DefaultResponsePolicy:2
 
 #  The level of debugging supported.
 DebugLevel:1
@@ -1063,7 +1066,7 @@ appPlugin:temperature-si7053,false
 appPlugin:wstk-display,false
 
 #  Plugin specific options
-AppPluginOption:EMBER_AF_PLUGIN_NETWORK_FIND_EXTENDED_PAN_ID,0125012501250125
+AppPluginOption(efr32~family[M]~performance[B]~radio[232]~flash[256K]~temp[G]~package[M]~pins[32]):EMBER_AF_PLUGIN_NETWORK_FIND_EXTENDED_PAN_ID,0125012501250125
 
-AppPluginOption:EMBER_AF_PLUGIN_NETWORK_FIND_CHANNEL_MASK,0x07FFF800UL
+AppPluginOption(efr32~family[M]~performance[B]~radio[232]~flash[256K]~temp[G]~package[M]~pins[32]):EMBER_AF_PLUGIN_NETWORK_FIND_CHANNEL_MASK,0x07FFF800UL
 

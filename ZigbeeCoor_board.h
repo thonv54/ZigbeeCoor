@@ -25,7 +25,7 @@
 
  #define DISABLE_PTI
 
- #define DISABLE_DCDC
+// #define DISABLE_DCDC
 
 // Enable COM port to use retarget serial configuration
 //#define COM_RETARGET_SERIAL

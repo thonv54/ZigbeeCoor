@@ -44,7 +44,6 @@
 /*                              EXPORTED DATA                                 */
 /******************************************************************************/
 EmberEventControl NwkFormEventControl; // Event control struct declaration
-
 NwkFormEventData_str NwkFormEventData;  // Event Data Struct
 
 
@@ -187,6 +186,7 @@ void NwkFormEventFunction(void) {
             networkParams.radioChannel = NwkFormEventData.Channel;
             networkParams.radioTxPower = 16;
             networkParams.panId = NwkFormEventData.PanId;
+            emberSetTxPowerMode(17);
             byStatus = emberAfFormNetwork(&networkParams);
         }
         break;

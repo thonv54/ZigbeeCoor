@@ -1310,9 +1310,6 @@
       <name>$PROJ_DIR$\..\..\util\common\form-and-join.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\framework\plugin\heartbeat\heartbeat.c</name>
-    </file>
-    <file>
       <name>$PROJ_DIR$\..\..\framework\plugin\identify\identify-cli.c</name>
     </file>
     <file>
@@ -1320,15 +1317,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\framework\plugin\identify\identify.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\framework\plugin-soc\idle-sleep\idle-sleep-cli.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\framework\plugin-soc\idle-sleep\idle-sleep-soc.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\..\framework\plugin-soc\idle-sleep\idle-sleep.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\hal\micro\cortexm3\efm32\isr-stubs.s79</name>

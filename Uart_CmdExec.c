@@ -238,18 +238,17 @@ int8u HC_GetDeviceMCVersion_Task(int8u *data) {
 
 int8u HC_ZclClusterCmdRequest_Task(int8u *data){
     int8u UartCmdStatus = UartCmdNormal;
-    int16u NwkAddr = MERGE16(data[0],data[1]);
-    int8u Endpoint = data[2];
-    int16u ClusterId = MERGE16(data[3],data[4]);
-    int8u CmdPayloadLength = data[5];
-    int8u ClusterCmdId = data[6];
-    int8u* CmdPayload = &data[7];
+    int16u NwkAddr = MERGE16(data[2],data[3]);
+    int8u Endpoint = data[4];
+    int16u ClusterId = MERGE16(data[5],data[6]);
+    int8u CmdPayloadLength = data[7];
+    int8u* CmdPayload = &data[8];
     
     emberAfFillExternalBuffer((ZCL_CLUSTER_SPECIFIC_COMMAND | ZCL_FRAME_CONTROL_CLIENT_TO_SERVER | ZCL_DISABLE_DEFAULT_RESPONSE_MASK),
-                        ClusterId, 
-                        ClusterCmdId, 
+                        ClusterId,
+                        CmdPayload[0],
                         "b",
-                        &CmdPayload[7],
+                        &CmdPayload[1],
                         CmdPayloadLength - 1);
     emberAfSetCommandEndpoints(1, Endpoint);
     emberAfSendCommandUnicast(EMBER_OUTGOING_DIRECT, NwkAddr);                            
@@ -268,12 +267,12 @@ int8u HC_ZclClusterCmdRequest_Task(int8u *data){
 
 int8u HC_ZclGlobalCmdRequest_Task(int8u *data){
     int8u UartCmdStatus = UartCmdNormal;
-    int16u NwkAddr = MERGE16(data[0],data[1]);
-    int8u Endpoint = data[2];
-    int16u ClusterId = MERGE16(data[3],data[4]);
-    int8u GeneralCmdId = data[5];
-    int8u CmdPayloadLength = data[6];
-    int8u* CmdPayload = &data[7];
+    int16u NwkAddr = MERGE16(data[2],data[3]);
+    int8u Endpoint = data[4];
+    int16u ClusterId = MERGE16(data[5],data[6]);
+    int8u GeneralCmdId = data[7];
+    int8u CmdPayloadLength = data[8];
+    int8u* CmdPayload = &data[9];
     
     emberAfFillExternalBuffer((ZCL_GLOBAL_COMMAND | ZCL_FRAME_CONTROL_CLIENT_TO_SERVER),
                         ClusterId, 
@@ -298,8 +297,8 @@ int8u HC_ZclGlobalCmdRequest_Task(int8u *data){
 
 int8u HC_ZdoCmdRequest_Task(int8u *data){
     int8u UartCmdStatus = UartCmdNormal;
-    int16u ApsNwkAddr = MERGE16(data[0],data[1]);
-    int16u ZdoCmd = MERGE16 (data[2],data[3]);
+    int16u ApsNwkAddr = MERGE16(data[2],data[3]);
+    int16u ZdoCmd = MERGE16 (data[4],data[5]);
 //    int8u CmdPayloadLength = data[6];
     int8u* CmdPayload = &data[7];
     
@@ -317,7 +316,7 @@ int8u HC_ZdoCmdRequest_Task(int8u *data){
     else if(ZdoCmd == IEEE_ADDRESS_REQUEST){
 //        int8u seqNumber = CmdPayload[0];
         
-        int16u NwkAddr = MERGE16(CmdPayload[1],CmdPayload[2]);
+        int16u NwkAddr = MERGE16(CmdPayload[2],CmdPayload[1]);
         int8u ReportKids = CmdPayload[3];
         int8u ChildStartIndex = CmdPayload[4];
         emberIeeeAddressRequest(NwkAddr,
@@ -328,7 +327,7 @@ int8u HC_ZdoCmdRequest_Task(int8u *data){
     else if(ZdoCmd == NODE_DESCRIPTOR_REQUEST){
 //        int8u seqNumber = CmdPayload[0];   
         
-        int16u NwkAddr = MERGE16(CmdPayload[1],CmdPayload[2]);
+        int16u NwkAddr = MERGE16(CmdPayload[2],CmdPayload[1]);
         emberNodeDescriptorRequest (NwkAddr,
                                     EMBER_AF_DEFAULT_APS_OPTIONS);
         
@@ -339,7 +338,7 @@ int8u HC_ZdoCmdRequest_Task(int8u *data){
     else if (ZdoCmd == SIMPLE_DESCRIPTOR_REQUEST){
 //        int8u seqNumber = CmdPayload[0];
         
-        int16u NwkAddr = MERGE16(CmdPayload[1],CmdPayload[2]);
+        int16u NwkAddr = MERGE16(CmdPayload[2],CmdPayload[1]);
         int8u Endpoint = CmdPayload[3];
 
         emberSimpleDescriptorRequest(NwkAddr,
@@ -349,7 +348,7 @@ int8u HC_ZdoCmdRequest_Task(int8u *data){
     else if(ZdoCmd == ACTIVE_ENDPOINTS_REQUEST){
 //        int8u seqNumber = CmdPayload[0];   
         
-        int16u NwkAddr = MERGE16(CmdPayload[1],CmdPayload[2]);
+        int16u NwkAddr = MERGE16(CmdPayload[2],CmdPayload[1]);
         emberActiveEndpointsRequest (NwkAddr,
                                     EMBER_AF_DEFAULT_APS_OPTIONS);
     }
@@ -420,6 +419,28 @@ int8u HC_ZdoCmdRequest_Task(int8u *data){
     else if (ZdoCmd == BINDING_TABLE_REQUEST){
     }
     else if (ZdoCmd == LEAVE_REQUEST){
+        /// Request:  <transaction sequence number: 1> <EUI64:8> <flags:1>
+        ///          The flag bits are:
+        ///          0x40 remove children
+        ///          0x80 rejoin
+        EmberNodeId target = ApsNwkAddr;
+        bool removeChildren = (bool)((CmdPayload[9]>>6) & 0x01);
+        bool rejoin = (bool)((CmdPayload[9]>>7) & 0x01);
+        EmberEUI64 nullEui64 = { 0, 0, 0, 0, 0, 0, 0, 0 };
+        EmberStatus status;
+
+        uint8_t options = 0;
+        if (rejoin) {
+        options |= EMBER_ZIGBEE_LEAVE_AND_REJOIN;
+        }
+        if (removeChildren) {
+        options |= EMBER_ZIGBEE_LEAVE_AND_REMOVE_CHILDREN;
+        }
+
+        status = emberLeaveRequest(target,
+                                 nullEui64,
+                                 options,
+                                 EMBER_AF_DEFAULT_APS_OPTIONS);
     }
     else if (ZdoCmd == PERMIT_JOINING_REQUEST){
     }
@@ -435,7 +456,7 @@ int8u HC_ZdoCmdRequest_Task(int8u *data){
     }
     else if (ZdoCmd == DIRECT_JOIN_REQUEST){
     }
-                        
+
     return UartCmdStatus;
 }
 
